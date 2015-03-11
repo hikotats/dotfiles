@@ -1,3 +1,4 @@
+"https://github.com/leader22/dotfiles/blob/master/.vimrc
 "新しい行のインデントを現在行と同じにする
 set autoindent
 "タブの代わりに空白文字を挿入する
@@ -15,10 +16,21 @@ set number
 "編集中のファイル名を表示
 set title
 set helplang=ja,en
+set number
 set noswapfile
 set clipboard=unnamed,autoselect
 
+" ejsファイルをhtmlと同じシンタックスに
+autocmd BufNewFile,BufReadPost *.ejs set filetype=html
+" mdファイルをmarkdownシンタックスに
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" json5ファイルをjsシンタックスに
+autocmd BufNewFile,BufReadPost *.json5 set filetype=javascript
 
+" ルーラを表示
+set ruler
+" 括弧入力で対応する括弧を一瞬強調
+set showmatch
 "カラー表示
 syntax on
 
