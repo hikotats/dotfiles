@@ -1,0 +1,30 @@
+"新しい行のインデントを現在行と同じにする
+set autoindent
+"タブの代わりに空白文字を挿入する
+set expandtab
+"タブは半角4文字分のスペース
+set ts=2 sw=2 sts=0
+"タブ文字、行末など不可視文字を表示する
+set list
+"閉じ括弧が入力されたとき、対応する括弧を表示する
+set showmatch
+"新しい行を作ったときに高度な自動インデントを行う
+set smartindent
+"行番号表示
+set number
+"編集中のファイル名を表示
+set title
+set helplang=ja,en
+set noswapfile
+set clipboard=unnamed,autoselect
+
+
+"カラー表示
+syntax on
+
+filetype on
+filetype plugin on
+filetype indent on
+nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
+inoremap <C-c> <Esc>
+vnoremap <silent> <C-p> "0p<CR>"
