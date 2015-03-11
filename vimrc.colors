@@ -1,2 +1,5 @@
-syntax enable
-colorscheme monokai
+syntax on
+colorscheme molokai
+
+" iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
+highlight Normal ctermbg=none
