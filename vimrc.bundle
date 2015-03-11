@@ -34,6 +34,8 @@ NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'groenewege/vim-less'
 
 " :help neobundle-example
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
