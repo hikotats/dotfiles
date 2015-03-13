@@ -39,7 +39,7 @@ NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'groenewege/vim-less'
-
+NeoBundle 'tyru/caw.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'altercation/vim-colors-solarized'
