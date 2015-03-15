@@ -1,8 +1,6 @@
 syntax on
-colorscheme solarized
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+colorscheme molokai
+set t_Co=256
 
 " iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
 highlight Normal ctermbg=none

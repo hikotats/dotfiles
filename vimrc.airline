@@ -5,9 +5,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
 
 set guifont=Ricty\ Regular\ for\ Powerline:h14
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 set t_Co=256
 let g:airline_theme='dark'
 let g:airline_left_sep = '⮀'

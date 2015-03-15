@@ -11,53 +11,111 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ここにインストールしたいプラグインの設定を書く
+" 表示形
+" airline
 NeoBundle 'bling/vim-airline'
+" unite
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'sickill/vim-monokai'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'tpope/vim-pathogen'
-"NeoBundle 'Shougo/vimfiler'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'vim-scripts/taglist.vim'
+" unite-colorscheme
 "NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'groenewege/vim-less'
+" vimproc
+NeoBundle 'Shougo/vimproc'
+" neomru
+NeoBundle 'Shougo/neomru.vim'
+" neocomplete
+NeoBundle 'Shougo/neocomplete.vim'
+" neocomplecache
+NeoBundle 'Shougo/neocomplcache'
+" neosnippet
+NeoBundle 'Shougo/neosnippet'
+" monokai
+"NeoBundle 'sickill/vim-monokai'
+" nerdtree
+NeoBundle 'scrooloose/nerdtree'
+" emmet
+NeoBundle 'mattn/emmet-vim'
+" pathogen
+NeoBundle 'tpope/vim-pathogen'
+" vimfiler
+"NeoBundle 'Shougo/vimfiler'
 
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'taichouchou2/html5.vim'
+" color scheme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" molokai
+NeoBundle 'tomasr/molokai'
+
+
+
+
+" taglist
+NeoBundle 'vim-scripts/taglist.vim'
+" smartinput
+ NeoBundle 'kana/vim-smartinput'
+" markdown
+NeoBundle 'tpope/vim-markdown'
+" previm
+NeoBundle 'kannokanno/previm'
+" open browser
+NeoBundle 'tyru/open-browser.vim'
+" vimdoc
+NeoBundle 'vim-jp/vimdoc-ja'
+" alinta
+NeoBundle 'h1mesuke/vim-alignta'
+" memolist
+NeoBundle 'glidenote/memolist.vim'
+" ctrlp
+NeoBundle 'ctrlpvim/ctrlp.vim'
+" surround
+NeoBundle 'tpope/vim-surround'
+" webapi
+NeoBundle 'mattn/webapi-vim'
+" advent_calendar
+NeoBundle 'mattn/unite-advent_calendar'
+
+
+" syntax
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" css3 syntax
+NeoBundle 'hail2u/vim-css3-syntax'
+" javascript syntax
+NeoBundle 'jelera/vim-javascript-syntax'
+" json syntax
+NeoBundle 'elzr/vim-json'
+" coffee syntax
+NeoBundle 'kchmck/vim-coffee-script'
+" less syntax
+NeoBundle 'groenewege/vim-less'
+" scss syntax
 NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'motemen/xslate-vim'
-NeoBundle 'myhere/vim-nodejs-complete'
+" typescript
 NeoBundle 'leafgarland/typescript-vim.git'
 NeoBundle 'marijnh/tern_for_vim', {
 \ 'build': {
 \   'others': 'npm install'
 \}}
+
+" unite outline
+"NeoBundle 'h1mesuke/unite-outline'
+" solarized
+"NeoBundle 'altercation/vim-colors-solarized'
+" lightline
+"NeoBundle 'itchyny/lightline.vim'
+" indent guides
+NeoBundle 'nathanaelkane/vim-indent-guides'
+" html5
+NeoBundle 'taichouchou2/html5.vim'
+" xslate
+NeoBundle 'motemen/xslate-vim'
+" nodejs complete
+NeoBundle 'myhere/vim-nodejs-complete'
+" autoclose
 NeoBundle 'Townk/vim-autoclose'
+" tcomment
 NeoBundle 'tomtom/tcomment_vim'
+" matchit
 NeoBundle 'vim-scripts/matchit.zip'
-NeoBundle 'scrooloose/syntastic'
+" syntastic
+"NeoBundle 'scrooloose/syntastic'
 
 " :help neobundle-example
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
