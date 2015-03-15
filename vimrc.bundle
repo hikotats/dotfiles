@@ -85,7 +85,13 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'kchmck/vim-coffee-script'
 " less syntax
 NeoBundle 'groenewege/vim-less'
-" scss syntax
+"NeoBundle 'tyru/caw.vim'
+"NeoBundle 'Shougo/vimfiler'
+"NeoBundle 'h1mesuke/unite-outline'
+"NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'itchyny/lightline.vim'
+"NeoBundle 'nathanaelkane/vim-indent-guides'
+"NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 " typescript
 NeoBundle 'leafgarland/typescript-vim.git'
