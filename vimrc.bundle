@@ -12,79 +12,45 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ここにインストールしたいプラグインの設定を書く
 " 表示形
-" airline
-NeoBundle 'bling/vim-airline'
-" unite
-NeoBundle 'Shougo/unite.vim'
-" unite-colorscheme
-"NeoBundle 'ujihisa/unite-colorscheme'
-" vimproc
-NeoBundle 'Shougo/vimproc'
-" neomru
-NeoBundle 'Shougo/neomru.vim'
-" neocomplete
-NeoBundle 'Shougo/neocomplete.vim'
-" neocomplecache
-NeoBundle 'Shougo/neocomplcache'
-" neosnippet
-NeoBundle 'Shougo/neosnippet'
-" monokai
-"NeoBundle 'sickill/vim-monokai'
-" nerdtree
-NeoBundle 'scrooloose/nerdtree'
-" emmet
-NeoBundle 'mattn/emmet-vim'
-" pathogen
-NeoBundle 'tpope/vim-pathogen'
-" vimfiler
-"NeoBundle 'Shougo/vimfiler'
+NeoBundle 'bling/vim-airline' " airline
+NeoBundle 'Shougo/unite.vim' " unite
+"NeoBundle 'ujihisa/unite-colorscheme' " unite-colorscheme
+"NeoBundle 'Shougo/vimproc' " vimproc
+NeoBundle 'Shougo/neomru.vim' " neomru
+NeoBundle 'Shougo/neocomplete.vim' " neocomplete
+NeoBundle 'Shougo/neocomplcache' " neocomplecache
+NeoBundle 'Shougo/neosnippet' " neosnippet
+"NeoBundle 'sickill/vim-monokai' " monokai
+NeoBundle 'scrooloose/nerdtree' " nerdtree
+NeoBundle 'mattn/emmet-vim' " emmet
+NeoBundle 'tpope/vim-pathogen' " pathogen
+"NeoBundle 'Shougo/vimfiler' " vimfiler
 
 " color scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" molokai
-NeoBundle 'tomasr/molokai'
+NeoBundle 'tomasr/molokai' " molokai
 
 
-
-
-" taglist
-NeoBundle 'vim-scripts/taglist.vim'
-" smartinput
- NeoBundle 'kana/vim-smartinput'
-" markdown
-NeoBundle 'tpope/vim-markdown'
-" previm
-NeoBundle 'kannokanno/previm'
-" open browser
-NeoBundle 'tyru/open-browser.vim'
-" vimdoc
-NeoBundle 'vim-jp/vimdoc-ja'
-" alinta
-NeoBundle 'h1mesuke/vim-alignta'
-" memolist
-NeoBundle 'glidenote/memolist.vim'
-" ctrlp
-NeoBundle 'ctrlpvim/ctrlp.vim'
-" surround
-NeoBundle 'tpope/vim-surround'
-" webapi
-NeoBundle 'mattn/webapi-vim'
-" advent_calendar
-NeoBundle 'mattn/unite-advent_calendar'
-
+NeoBundle 'vim-scripts/taglist.vim' " taglist
+NeoBundle 'kana/vim-smartinput' " smartinput
+NeoBundle 'tpope/vim-markdown' " markdown
+NeoBundle 'kannokanno/previm' " previm
+NeoBundle 'tyru/open-browser.vim' " open browser
+NeoBundle 'vim-jp/vimdoc-ja' " vimdoc
+NeoBundle 'h1mesuke/vim-alignta' " alinta
+NeoBundle 'glidenote/memolist.vim' " memolist
+NeoBundle 'ctrlpvim/ctrlp.vim' " ctrlp
+NeoBundle 'tpope/vim-surround' " surround
+NeoBundle 'mattn/webapi-vim' " webapi
+NeoBundle 'mattn/unite-advent_calendar' " advent_calendar
 
 " syntax
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" css3 syntax
-NeoBundle 'hail2u/vim-css3-syntax'
-" javascript syntax
-NeoBundle 'jelera/vim-javascript-syntax'
-" json syntax
-NeoBundle 'elzr/vim-json'
-" coffee syntax
-NeoBundle 'kchmck/vim-coffee-script'
-" less syntax
-NeoBundle 'groenewege/vim-less'
+NeoBundle 'hail2u/vim-css3-syntax' " css3 syntax
+NeoBundle 'jelera/vim-javascript-syntax' " javascript syntax
+NeoBundle 'elzr/vim-json' " json syntax
+NeoBundle 'kchmck/vim-coffee-script' " coffee syntax
+NeoBundle 'groenewege/vim-less' " less syntax
 "NeoBundle 'tyru/caw.vim'
 "NeoBundle 'Shougo/vimfiler'
 "NeoBundle 'h1mesuke/unite-outline'
@@ -93,35 +59,23 @@ NeoBundle 'groenewege/vim-less'
 "NeoBundle 'nathanaelkane/vim-indent-guides'
 "NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
-" typescript
-NeoBundle 'leafgarland/typescript-vim.git'
+NeoBundle 'leafgarland/typescript-vim.git' " typescript
 NeoBundle 'marijnh/tern_for_vim', {
 \ 'build': {
 \   'others': 'npm install'
 \}}
 
-" unite outline
-"NeoBundle 'h1mesuke/unite-outline'
-" solarized
-"NeoBundle 'altercation/vim-colors-solarized'
-" lightline
-"NeoBundle 'itchyny/lightline.vim'
-" indent guides
-NeoBundle 'nathanaelkane/vim-indent-guides'
-" html5
-NeoBundle 'taichouchou2/html5.vim'
-" xslate
-NeoBundle 'motemen/xslate-vim'
-" nodejs complete
-NeoBundle 'myhere/vim-nodejs-complete'
-" autoclose
-NeoBundle 'Townk/vim-autoclose'
-" tcomment
-NeoBundle 'tomtom/tcomment_vim'
-" matchit
-NeoBundle 'vim-scripts/matchit.zip'
-" syntastic
-"NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'h1mesuke/unite-outline' " unite outline
+"NeoBundle 'altercation/vim-colors-solarized' " solarized
+"NeoBundle 'itchyny/lightline.vim' " lightline
+NeoBundle 'nathanaelkane/vim-indent-guides' " indent guides
+NeoBundle 'taichouchou2/html5.vim' " html5
+NeoBundle 'motemen/xslate-vim' " xslate
+NeoBundle 'myhere/vim-nodejs-complete' " nodejs complete
+NeoBundle 'Townk/vim-autoclose' " autoclose
+NeoBundle 'tomtom/tcomment_vim' " tcomment
+NeoBundle 'vim-scripts/matchit.zip' " matchit
+"NeoBundle 'scrooloose/syntastic' " syntastic
 
 " :help neobundle-example
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,6 +95,7 @@ if neobundle#exists_not_installed_bundles()
   "finish
 endif
 
+" powerline
 set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
