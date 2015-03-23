@@ -19,7 +19,8 @@ set helplang=ja,en
 set number
 set noswapfile
 set clipboard=unnamed,autoselect
-
+" インサートモード時にバックスペースを使う
+set backspace=indent,eol,start
 " ejsファイルをhtmlと同じシンタックスに
 autocmd BufNewFile,BufReadPost *.ejs set filetype=html
 " mdファイルをmarkdownシンタックスに
@@ -41,6 +42,10 @@ nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 inoremap <C-c> <Esc>
 vnoremap <silent> <C-p> "0p<CR>"
 
+# iTerm2のタブ名を変更する
+function title {
+  echo -ne "\033]0;"$*"\007"
+}
 " " ステータスラインとかに色つかないときのおまじない
 if !has('gui_running')
 set t_Co=256
@@ -69,7 +74,7 @@ set fenc=utf-8
 " 対応する文字コード
 set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 set langmenu=ja_JP.utf-8
-<<<<<<< HEAD
-=======
 set guifontset=a14,r14,k14
->>>>>>> fb780695fc715f80db1b523ded552f81973b15cf
+
+set mouse=a
+set ttymouse=xterm2

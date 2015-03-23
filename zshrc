@@ -11,4 +11,7 @@
 [ -f $HOME/dotfiles/zshrc.oh-my-zsh ] && source $HOME/dotfiles/zshrc.oh-my-zsh
 
 ## tmuxinator
-[ -f $HOME/dotfiles/tmuxinator.zsh ] && source $HOME/dotfiles/tmuxinator.zsh
+[ -f $HOME/.tmuxinator/tmuxinator.zsh ] && source $HOME/.tmuxinator/tmuxinator.zsh
+
+# extra
+[ -f $HOME/dotfiles/zshrc.extra ] && source $HOME/dotfiles/zshrc.extra
