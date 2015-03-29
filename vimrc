@@ -1,6 +1,9 @@
 " airline
 source $HOME/dotfiles/vimrc.airline
 
+" basic
+source $HOME/dotfiles/vimrc.basic
+
 " bundle
 source $HOME/dotfiles/vimrc.bundle
 
@@ -24,3 +27,6 @@ source $HOME/dotfiles/vimrc.previm
 
 " memolist
 source $HOME/dotfiles/vimrc.memolist
+
+" keymap
+source $HOME/dotfiles/vimrc.keymap

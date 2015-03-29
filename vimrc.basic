@@ -16,7 +16,6 @@ set number
 "編集中のファイル名を表示
 set title
 set helplang=ja,en
-set number
 set noswapfile
 set clipboard=unnamed,autoselect
 " インサートモード時にバックスペースを使う
@@ -42,11 +41,11 @@ nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 inoremap <C-c> <Esc>
 vnoremap <silent> <C-p> "0p<CR>"
 
-# iTerm2のタブ名を変更する
-function title {
-  echo -ne "\033]0;"$*"\007"
-}
-" " ステータスラインとかに色つかないときのおまじない
+"# iTerm2のタブ名を変更する
+"function Title {
+"  echo -ne \033]0;"$*"\007"
+"}
+" ステータスラインとかに色つかないときのおまじない
 if !has('gui_running')
 set t_Co=256
 endif
