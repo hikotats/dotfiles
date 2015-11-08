@@ -21,7 +21,7 @@ if !exists('g:memolist_path')
 endif
 
 command! -nargs=0 MemoList :call memolist#list()
-command! -nargs=? MemoGrep :call memolist#grep(<q-args>)
+" command! -nargs=? MemoGrep :call memolist#grep(<q-args>)
 command! -nargs=? MemoNew :call memolist#new(<q-args>)
 
 let &cpo = s:cpo_save

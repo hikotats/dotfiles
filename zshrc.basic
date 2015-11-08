@@ -1,4 +1,4 @@
-export PATH=~/Library/Python/2.7/bin:$PATH
+#export PATH=~/Library/Python/2.7/bin:$PATH
 
 # export EDITOR='vim'
 export SHELL='zsh'
@@ -10,6 +10,7 @@ export SHELL='zsh'
 # -------------------------------------
 # 環境変数
 # -------------------------------------
+export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig
 
 # SSHで接続した先で日本語が使えるようにする
 export LC_CTYPE=en_US.UTF-8
@@ -148,6 +149,9 @@ function title {
     echo -ne "\033]0;"$*"\007"
 }
 
-#PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+export PATH=$PATH:/usr/local/bin/
+export PATH=$PATH:$HOME/Library/Android/sdk/tools/
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/

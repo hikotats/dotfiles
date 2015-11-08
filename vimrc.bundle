@@ -15,16 +15,19 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'bling/vim-airline' " airline
 NeoBundle 'Shougo/unite.vim' " unite
 "NeoBundle 'ujihisa/unite-colorscheme' " unite-colorscheme
-"NeoBundle 'Shougo/vimproc' " vimproc
+NeoBundle 'Shougo/vimproc' " vimproc
 NeoBundle 'Shougo/neomru.vim' " neomru
 NeoBundle 'Shougo/neocomplete.vim' " neocomplete
 NeoBundle 'Shougo/neocomplcache' " neocomplecache
-NeoBundle 'Shougo/neosnippet' " neosnippet
+NeoBundle 'Shougo/neosnippet.vim' " neosnippet
+NeoBundle 'Shougo/neosnippet-snippets' "neosnippet-snippets
 "NeoBundle 'sickill/vim-monokai' " monokai
 NeoBundle 'scrooloose/nerdtree' " nerdtree
 NeoBundle 'mattn/emmet-vim' " emmet
 NeoBundle 'tpope/vim-pathogen' " pathogen
-"NeoBundle 'Shougo/vimfiler' " vimfiler
+NeoBundle 'Shougo/vimfiler' " vimfiler
+NeoBundle 'Shougo/vimshell' " vimshell
+NeoBundle 'thinca/vim-quickrun' " vim-quickrun
 
 " color scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,7 +55,6 @@ NeoBundle 'elzr/vim-json' " json syntax
 NeoBundle 'kchmck/vim-coffee-script' " coffee syntax
 NeoBundle 'groenewege/vim-less' " less syntax
 "NeoBundle 'tyru/caw.vim'
-"NeoBundle 'Shougo/vimfiler'
 "NeoBundle 'h1mesuke/unite-outline'
 "NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'itchyny/lightline.vim'
@@ -64,6 +66,10 @@ NeoBundle 'marijnh/tern_for_vim', {
 \ 'build': {
 \   'others': 'npm install'
 \}}
+
+
+NeoBundle 'basyura/jslint.vim' " jslint
+NeoBundle 'JavaScript-Indent' " JavaScript-Indent
 
 "NeoBundle 'h1mesuke/unite-outline' " unite outline
 "NeoBundle 'altercation/vim-colors-solarized' " solarized
@@ -77,6 +83,8 @@ NeoBundle 'tomtom/tcomment_vim' " tcomment
 NeoBundle 'vim-scripts/matchit.zip' " matchit
 "NeoBundle 'scrooloose/syntastic' " syntastic
 
+NeoBundle 'mattn/webapi-vim' " 翻訳
+NeoBundle 'mattn/excitetranslate-vim' " 翻訳
 " :help neobundle-example
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

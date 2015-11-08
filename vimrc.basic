@@ -77,3 +77,13 @@ set guifontset=a14,r14,k14
 
 set mouse=a
 set ttymouse=xterm2
+
+" HTMLをJavaScript連結文字列に変換
+vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
+vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
+
+" vim起動時にneocomplecacheを有効にする
+let g:neocomplcache_enable_at_startup = 1
+" Ctrl + k でスニペット補完を行う
+imap <C-k>  <Plug>(neocomplcache_snippets_expand)
+smap <C-k>  <Plug>(neocomplcache_snippets_expand)
