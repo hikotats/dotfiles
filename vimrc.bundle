@@ -28,6 +28,8 @@ NeoBundle 'tpope/vim-pathogen' " pathogen
 NeoBundle 'Shougo/vimfiler' " vimfiler
 NeoBundle 'Shougo/vimshell' " vimshell
 NeoBundle 'thinca/vim-quickrun' " vim-quickrun
+"NeoBundle 'Shougo/vimfiler' " vimfiler
+NeoBundle 'tpope/vim-surround' " surround
 
 " color scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
