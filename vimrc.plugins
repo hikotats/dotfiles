@@ -28,3 +28,8 @@ nnoremap <silent> ,is :VimShell<CR>
 " 翻訳
 normal mode 'tr' transtlate
 nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
+
+" gist-vim
+let g:github_user = 'hikotats'
+let g:github_token = '78170778a29b5242a976e433acf9c8c6d2c2de0b'
+let g:gist_privates = 1
