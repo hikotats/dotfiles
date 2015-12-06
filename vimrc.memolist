@@ -37,15 +37,4 @@ command! -nargs=0 MemoGrep :Unite grep:~/Dropbox/Memo/ -no-quit
 " メモ一覧をVimFilerで呼び出すコマンド
 command! -nargs=0 MemoFiler :VimFiler ~/Dropbox/Memo
 
-" メモ関連マッピング
-nnoremap Mn :MemoNew
-nnoremap Ml :MemoList
-nnoremap Mf :MemoFiler
-nnoremap Mg :MemoGrep
-
-" シフト押したままでもマッピングが起動するように
-nnoremap MN :MemoNew
-nnoremap ML :MemoList
-nnoremap MF :MemoFiler
-nnoremap MG :MemoGrep
 " vim:set ft=vim ts=2 sw=2 sts=2:

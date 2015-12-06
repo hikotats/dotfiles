@@ -1,35 +1,73 @@
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
- 
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
- 
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" Unite {{{
+" http://blog.remora.cx/2010/12/vim-ref-with-unite.html
+" 入力モードで開始する
+let g:unite_enable_start_insert=0
+" ヒストリー/ヤンク機能を有効化
+let g:unite_source_history_yank_enable =1
+" matcher をデフォルトにする
+call unite#custom#source('file', 'matchers', "matcher_default")"
+" ウィンドウを分割して開く
+"au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+"au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+"au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+"au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" ESCキーを2回押すと終了する
+"au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+"au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+" }}}
+" Airline {{{
+"let g:airline_section_a = airline#section#create(['mode','','branch'])
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:unite_force_overwrite_statusline = 0
 
-" ctrl + / で選択範囲のコメントアウト切り替え
-nmap <C-_> <Plug>(caw:i:toggle)
-vmap <C-_> <Plug>(caw:i:toggle)
+let g:vimfiler_force_overwrite_statusline = 0
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
-" ,is: シェルを起動
-nnoremap <silent> ,is :VimShell<CR>
 
-" 翻訳
-normal mode 'tr' transtlate
-nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
-
-" gist-vim
+set guifont=Ricty\ Regular\ for\ Powerline:h14
+let g:Powerline_symbols = 'fancy'
+set t_Co=256
+let g:airline_theme='dark'
+let g:airline_left_sep = '⮀'
+let g:airline_right_sep = '⮂'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_symbols.branch = '⭠'
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮀'
+" /=Airline }}}1
+" gist-vim "{{{
 let g:github_user = 'hikotats'
 let g:github_token = '78170778a29b5242a976e433acf9c8c6d2c2de0b'
 let g:gist_privates = 1
+" }}}
+" qfixhowm {{{
+" ファイル拡張子をmdにする
+let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
+" howm_dir
+let howm_dir = '~/Dropbox/howm'
+" ファイルタイプをmarkdownにする
+let QFixHowm_FileType = 'markdown'
+" タイトル記号
+let QFixHowm_Title = '#'
+" タイトル行検索正規表現の辞書を初期化
+let QFixMRU_Title = {}
+" MRUでタイトル行とみなす正規表現(Vimの正規表現で指定)
+let QFixMRU_Title['mkd'] = '^###[^#]'
+" grepでタイトル行とみなす正規表現(使用するgrepによっては変更する必要があります)
+let QFixMRU_Title['mkd_regxp'] = '^###[^#]'
+" }}}
+" Previm {{{
+let g:previm_open_cmd = 'open -a Safari'
+" }}}

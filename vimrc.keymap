@@ -1,41 +1,124 @@
 " .vimrcを瞬時に開く
- nnoremap <Space><Space>. :e $MYVIMRC<CR>
- " vimrcの設定を反映
- nnoremap <Space><Space>.. :<C-u>source $MYVIMRC<CR>
+" nnoremap <Space><Space>. :e $MYVIMRC<CR>
+nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
+" vimrcの設定を反映
+nnoremap <Space><Space>.. :<C-u>source $MYVIMRC<CR>
 " insertモードから抜ける
- inoremap <silent> jj <ESC>
- inoremap <silent> <C-j> j
- inoremap <silent> kk <ESC>
+inoremap <silent> jj <ESC>
+inoremap <silent> <C-j> j
+inoremap <silent> kk <ESC>
 " inoremap <silent> <C-k> k
 
- " 行頭・行末移動方向をキーの相対位置にあわせる
- nnoremap 0 $ 
- nnoremap 1 0 
+" 行頭・行末移動方向をキーの相対位置にあわせる
+nnoremap 0 $ 
+nnoremap 1 0 
 
- " 挿入モードでのカーソル移動
- inoremap <C-j> <Down>
-" inoremap <C-k> <Up>
- inoremap <C-h> <Left>
- inoremap <C-l> <Right>
+" 挿入モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
- " カーソル前の文字削除
- inoremap <silent> <C-h> <C-g>u<C-h>
- " カーソル後の文字削除
- inoremap <silent> <C-d> <Del>
- " カーソルから行頭まで削除
- inoremap <silent> <C-d>e <Esc>lc^
- " カーソルから行末まで削除
- inoremap <silent> <C-d>0 <Esc>lc$
- " カーソルから行頭までヤンク
- inoremap <silent> <C-y>e <Esc>ly0<Insert>
- " カーソルから行末までヤンク
- inoremap <silent> <C-y>0 <Esc>ly$<Insert>
+" カーソル前の文字削除
+inoremap <silent> <C-h> <C-g>u<C-h>
+" カーソル後の文字削除
+inoremap <silent> <C-d> <Del>
+" カーソルから行頭まで削除
+inoremap <silent> <C-d>e <Esc>lc^
+" カーソルから行末まで削除
+inoremap <silent> <C-d>0 <Esc>lc$
+" カーソルから行頭までヤンク
+inoremap <silent> <C-y>e <Esc>ly0<Insert>
+" カーソルから行末までヤンク
+inoremap <silent> <C-y>0 <Esc>ly$<Insert>
 
- " 引用符, 括弧の設定
- inoremap { {}<Left>
- inoremap [ []<Left>
- inoremap ( ()<Left>
- inoremap " ""<Left>
- inoremap ' ''<Left>
- inoremap <> <><Left>
+" map <C-s> to :update
+noremap <silent> <C-S>      :update<CR>
+vnoremap <silent> <C-S>     <C-C>:update<CR>
+inoremap <silent> <C-S>     <C-O>:update<CR>
+" 引用符, 括弧の設定 {{{
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap <> <><Left>
+" }}}
+" Plugin key-mappings.
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
 
+" Ctrl + k でスニペット補完を行う
+" imap <C-k>  <Plug>(neocomplcache_snippets_expand)
+" smap <C-k>  <Plug>(neocomplcache_snippets_expand)
+
+inoremap <C-c> <Esc>
+vnoremap <silent> <C-p> "0p<CR>"
+" NERDTreeToggle 
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" \lでtaglistウインドウを開いたり閉じたり出来るショートカット"
+map <silent> <leader>l :TlistToggle<CR>
+" ctrl + / で選択範囲のコメントアウト切り替え
+nmap <C-_> <Plug>(caw:i:toggle)
+vmap <C-_> <Plug>(caw:i:toggle)
+" ,is: シェルを起動
+nnoremap <silent> ,is :VimShell<CR>
+" 翻訳
+normal mode 'tr' transtlate
+nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" memolist keymap {{{
+" メモ関連マッピング
+nnoremap Mn :MemoNew
+nnoremap Ml :MemoList
+nnoremap Mf :MemoFiler
+nnoremap Mg :MemoGrep
+
+" シフト押したままでもマッピングが起動するように
+nnoremap MN :MemoNew
+nnoremap ML :MemoList
+nnoremap MF :MemoFiler
+nnoremap MG :MemoGrep
+" }}}
+" Unite keymap {{{
+" prefix keyの設定
+nmap <Space> [unite]
+" バッファ一覧
+noremap <C-P> :Unite buffer<CR>
+" カレントディレクトリを表示
+nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" バッファと最近開いたファイル一覧を表示
+nnoremap <silent> [unite]f :<C-u>Unite<Space>buffer file_mru<CR>
+" 最近開いたディレクトリを表示
+nnoremap <silent> [unite]d :<C-u>Unite<Space>directory_mru<CR>
+" ブックマークを表示
+nnoremap <silent> [unite]b :<C-u>Unite<Space>bookmark<CR>
+" レジストリを表示
+nnoremap <silent> [unite]r :<C-u>Unite<Space>register<CR>
+" タブを表示
+nnoremap <silent> [unite]t :<C-u>Unite<Space>tab<CR>
+" ヒストリ/ヤンクを表示
+nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
+" outline
+nnoremap <silent> [unite]o :<C-u>Unite<Space>outline<CR>
+" file_rec:!
+nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
+" unite.vimを開いている間のキーマッピング
+autocmd FileType unite call s:unite_my_settings() "{{{
+  function! s:unite_my_settings()   
+  " ESCでuniteを終了
+  " nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction "}}}
+" }}}
+" HTMLをJavaScript連結文字列に変換 {{{
+vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
+vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
+" }}}

@@ -4,7 +4,8 @@
 # -------------------------------------
 
 # alias自身をひらく
-alias aa="vim ~/dotfiles/zshrc.alias"
+alias za="vim ~/dotfiles/zshrc.alias"
+alias zb="vim ~/dotfiles/zshrc.basic"
 # source 
 alias az="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
