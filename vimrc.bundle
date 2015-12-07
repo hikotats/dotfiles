@@ -55,8 +55,8 @@ NeoBundle 'marijnh/tern_for_vim', {
 \}}
 NeoBundle 'basyura/jslint.vim'               " jslint
 NeoBundle 'JavaScript-Indent'                " JavaScript-Indent
-NeoBundle 'nathanaelkane/vim-indent-guides'  " indent guides
-NeoBundle 'taichouchou2/html5.vim'           " html5
+" NeoBundle 'nathanaelkane/vim-indent-guides'  " indent guides
+" NeoBundle 'taichouchou2/html5.vim'           " html5
 NeoBundle 'motemen/xslate-vim'               " xslate
 NeoBundle 'myhere/vim-nodejs-complete'       " nodejs complete
 NeoBundle 'Townk/vim-autoclose'              " autoclose
