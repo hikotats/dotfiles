@@ -34,7 +34,7 @@ alias ws="open -a Webstorm"
 # Vim 
 # alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 # alias vi=vim
-
+alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 # vimdiff
 # alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
 # view
