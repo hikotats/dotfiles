@@ -41,6 +41,7 @@ NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'mattn/emmet-vim'                  " emmet
 NeoBundle 'tpope/vim-surround'               " surround
 NeoBundle 'kana/vim-smartinput'              " smartinput
+NeoBundle 'tpope/vim-fugitive'               " fugitive
 NeoBundle 'tpope/vim-markdown'               " markdown
 NeoBundle 'hail2u/vim-css3-syntax'           " css3 syntax
 NeoBundle 'jelera/vim-javascript-syntax'     " javascript syntax
