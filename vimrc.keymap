@@ -27,6 +27,9 @@ inoremap <C-a> <HOME>
 nnoremap <C-a> <HOME>
 inoremap <C-e> <END>
 nnoremap <C-e> <END>
+inoremap <C-f> <C-o>w
+inoremap <C-b> <C-o>b
+inoremap <C-d> <C-o>x
 " }}}
 " Tab navigation {{{
 nnoremap <C->>    :tabprevious<CR>
@@ -60,8 +63,13 @@ inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
-inoremap <> <><Left>
-" }}}
+inoremap < <><Left>
+inoremap % %%<Left>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+vnoremap " "zdi^V"<C-R>z^V"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>" }}}
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)

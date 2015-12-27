@@ -60,7 +60,7 @@ NeoBundle 'JavaScript-Indent'                " JavaScript-Indent
 " NeoBundle 'taichouchou2/html5.vim'           " html5
 NeoBundle 'motemen/xslate-vim'               " xslate
 NeoBundle 'myhere/vim-nodejs-complete'       " nodejs complete
-NeoBundle 'Townk/vim-autoclose'              " autoclose
+" NeoBundle 'Townk/vim-autoclose'              " autoclose
 NeoBundle 'tomtom/tcomment_vim'              " tcomment
 NeoBundle 'vim-scripts/matchit.zip'          " matchit
 NeoBundle 'thinca/vim-ref'                   " ref
