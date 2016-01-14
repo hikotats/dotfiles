@@ -1,6 +1,6 @@
 " .vimrcを瞬時に開く
-" nnoremap <Space><Space>. :e $MYVIMRC<CR>
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
+nnoremap <Space>, :e ~/dotfiles/vimrc.keymap<CR>
 " vimrcの設定を反映
 nnoremap <Space><Space>.. :<C-u>source $MYVIMRC<CR>
 " insertモードから抜ける
@@ -27,9 +27,8 @@ inoremap <C-a> <HOME>
 nnoremap <C-a> <HOME>
 inoremap <C-e> <END>
 nnoremap <C-e> <END>
-inoremap <C-f> <C-o>w
-inoremap <C-b> <C-o>b
-inoremap <C-d> <C-o>x
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 " }}}
 " Tab navigation {{{
 nnoremap <C->>    :tabprevious<CR>
@@ -40,7 +39,7 @@ inoremap <C-Right>    <Esc>:tabnext<CR>i
 inoremap <C-t> <Esc>:tabnew<CR>noremap <silent> <C-_><Tab> gt
 " }}}
 " カーソル前の文字削除
-inoremap <silent> <C-h> <C-g>u<C-h>
+" inoremap <silent> <C-h> <C-g>u<C-h>
 " カーソル後の文字削除
 inoremap <silent> <C-d> <Del>
 " カーソルから行頭まで削除
