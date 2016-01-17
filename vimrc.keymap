@@ -1,24 +1,63 @@
-" .vimrcを瞬時に開く
-nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
-nnoremap <Space>, :e ~/dotfiles/vimrc.keymap<CR>
-" vimrcの設定を反映
-nnoremap <Space><Space>.. :<C-u>source $MYVIMRC<CR>
-" insertモードから抜ける
-inoremap <silent> jj <ESC>
-inoremap <silent> <C-j> j
-inoremap <silent> kk <ESC>
-" inoremap <silent> <C-k> k
+let mapleader = "\<Space>"
 
-" 行頭・行末移動方向をキーの相対位置にあわせる
-nnoremap 0 $ 
-nnoremap 1 0 
+" .vimrcを瞬時に開く
+" nnoremap <Space><Space>. :e $MYVIMRC<CR>
+nnoremap <Leader>. :<C-u>tabedit $MYVIMRC<CR>
+" keymapを開く
+nnoremap <Leader>, :<C-u>tabedit ~/dotfiles/vimrc.keymap<CR>
+
+" vimrcの設定を反映
+nnoremap <Leader><Space>.. :<C-u>source $MYVIMRC<CR>
+
+" snippetを瞬時に開く
+nnoremap <Leader>\ :<C-u>tabedit ~/.vim/bundle/vim-snippets/snippets/<CR>
+
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q <Nop>
+nnoremap Q :<C-u>help 
+
+" ファイルを保存する
+nnoremap <Leader>w :w<CR>
+" 新しいファイルを開く
+nnoremap <Leader>o :CtrlP<CR>
+" ファイルを閉じる
+nnoremap <Leader>q :q<CR>
+" Enterで改行 insert
+nnoremap <CR> o
+nnoremap <S-CR> O
+
+" システムのクリップボードにコピー＆ペーストする
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" ビジュアルラインモードに切り替える
+nmap <Leader><Leader> V
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+"
+" insertモードから抜ける
+inoremap <silent> <C-c> <ESC>
+inoremap <silent> <C-j> <ESC>
+
+" ノーマルモード時だけ ; と : を入れ替える
+nnoremap ; :
+nnoremap : ;
+
 " 行末までのヤンクにする
 nnoremap Y y$
+
 " インクリメント
-nnoremap + <C-a> 
+nnoremap + <C-a><Left> 
 " デクリメント
-nnoremap - <C-x> 
-" 挿入モードでのカーソル移動 {{{
+nnoremap - <C-x><Left>
+
+" 挿入モードでのカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -27,80 +66,51 @@ inoremap <C-a> <HOME>
 nnoremap <C-a> <HOME>
 inoremap <C-e> <END>
 nnoremap <C-e> <END>
-inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-" }}}
-" Tab navigation {{{
+inoremap <C-b> <Left>
+inoremap <C-d> <Del>
+
+" Tab navigation
 nnoremap <C->>    :tabprevious<CR>
 nnoremap <C-Right>    :tabnext<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-Left>    <Esc>:tabprevious<CR>i
 inoremap <C-Right>    <Esc>:tabnext<CR>i
 inoremap <C-t> <Esc>:tabnew<CR>noremap <silent> <C-_><Tab> gt
-" }}}
-" カーソル前の文字削除
-" inoremap <silent> <C-h> <C-g>u<C-h>
-" カーソル後の文字削除
-inoremap <silent> <C-d> <Del>
-" カーソルから行頭まで削除
-inoremap <silent> <C-d>e <Esc>lc^
-" カーソルから行末まで削除
-inoremap <silent> <C-d>0 <Esc>lc$
-" カーソルから行頭までヤンク
-inoremap <silent> <C-y>e <Esc>ly0<Insert>
-" カーソルから行末までヤンク
-inoremap <silent> <C-y>0 <Esc>ly$<Insert>
 
-" Use <C-s> for saving {{{
-noremap <silent> <C-S>      :update<CR>
-vnoremap <silent> <C-S>     <C-C>:update<CR>
-inoremap <silent> <C-S>     <C-O>:update<CR>
-" }}}
-" 引用符, 括弧の設定 {{{
+" 引用符, 括弧の設定 
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
-inoremap < <><Left>
-inoremap % %%<Left>
-vnoremap { "zdi^V{<C-R>z}<ESC>
-vnoremap [ "zdi^V[<C-R>z]<ESC>
-vnoremap ( "zdi^V(<C-R>z)<ESC>
-vnoremap " "zdi^V"<C-R>z^V"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>" }}}
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" Ctrl + k でスニペット補完を行う
-" imap <C-k>  <Plug>(neocomplcache_snippets_expand)
-" smap <C-k>  <Plug>(neocomplcache_snippets_expand)
+vnoremap { "zdi{<C-R>z}<ESC>
+vnoremap [ "zdi[<C-R>z]<ESC>
+vnoremap ( "zdi(<C-R>z)<ESC>
+vnoremap " "zdi"<C-R>z"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
 
 inoremap <C-c> <Esc>
-vnoremap <silent> <C-p> "0p<CR>"
+vnoremap <C-p> "0p<CR>"
 " NERDTreeToggle 
-"nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><Leader>e :NERDTreeToggle<CR>
 " \lでtaglistウインドウを開いたり閉じたり出来るショートカット"
-map <silent> <leader>l :TlistToggle<CR>
+map  <Leader>l :TlistToggle<CR>
+
 " ctrl + / で選択範囲のコメントアウト切り替え
 nmap <C-_> <Plug>(caw:i:toggle)
 vmap <C-_> <Plug>(caw:i:toggle)
-" ,is: シェルを起動
-nnoremap <silent> ,is :VimShell<CR>
-" 翻訳
-normal mode 'tr' transtlate
-nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
 
-" memolist keymap {{{
+" ,is: シェルを起動
+nnoremap <silent> <Leader>is :VimShell<CR>
+
+" 翻訳
+nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
+
+nnoremap <Leader>js :set filetype=javascript<CR>
+nnoremap <Leader>html :set filetype=html<CR>
+
+" memolist keymap
 " メモ関連マッピング
 nnoremap Mn :MemoNew
 nnoremap Ml :MemoList
@@ -112,10 +122,11 @@ nnoremap MN :MemoNew
 nnoremap ML :MemoList
 nnoremap MF :MemoFiler
 nnoremap MG :MemoGrep
-" }}}
-" Unite keymap {{{
+
+" Unite keymap
 " prefix keyの設定
-nmap <Space> [unite]
+nnoremap [unite] <Nop>
+nmap <Leader>u [unite]
 " バッファ一覧
 noremap <C-P> :Unite buffer<CR>
 " カレントディレクトリを表示
@@ -137,13 +148,22 @@ nnoremap <silent> [unite]o :<C-u>Unite<Space>outline<CR>
 " file_rec:!
 nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
 " unite.vimを開いている間のキーマッピング
-autocmd FileType unite call s:unite_my_settings() "{{{
+autocmd FileType unite call s:unite_my_settings() 
   function! s:unite_my_settings()   
   " ESCでuniteを終了
-  " nmap <buffer> <ESC> <Plug>(unite_exit)
-endfunction "}}}
-" }}}
-" HTMLをJavaScript連結文字列に変換 {{{
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction
+
+" HTMLをJavaScript連結文字列に変換
 vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
 vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
-" }}}
+
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()

@@ -10,6 +10,7 @@ alias zb="vim ~/dotfiles/zshrc.basic"
 alias az="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 
+alias snip="vim -p ~/.vim/bundle/vim-snippets/snippets/javascript/*.snippets"
 # commands
 # ls
 alias ls="ls -G" # color for darwin
@@ -30,13 +31,13 @@ alias subl="open -g -a Sublime\ Text\ 3"
 alias wunder="open -a Wunderlist"
 alias wunderadd="wunderline"
 alias ws="open -a Webstorm"
-
+# ctags
+# alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 # Vim 
-# alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-# alias vi=vim
-alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias vi=vim
 # vimdiff
-# alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
+alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
 # view
-# alias view=/Applications/MacVim.app/Contents/MacOS/view
+alias view=/Applications/MacVim.app/Contents/MacOS/view
 

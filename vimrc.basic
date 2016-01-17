@@ -17,7 +17,8 @@ set fenc=utf-8
 " 対応する文字コード
 set fencs=utf-8,iso-2022-jp,euc-jp,cp932
 set langmenu=ja_JP.utf-8
-set guifontset=a14,r14,k14
+" set guifontset=a18,r18,k18
+set guifont=Ricty\ Regular\ for\ Powerline:h18
 
 set display=lastline
 "https://github.com/leader22/dotfiles/blob/master/.vimrc
@@ -66,11 +67,15 @@ set ruler
 " syntax on
 syntax enable
 set background=dark
+colorscheme solarized
+
+if !has('gui_running')
 colorscheme molokai
 set t_Co=256
+endif
 
 " iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
-" hi Normal ctermbg=none
+hi Normal ctermbg=none
 
 " vimdiff
 hi DiffAdd    ctermfg=black ctermbg=2  
@@ -86,9 +91,4 @@ filetype indent on
 "function Title {
 "  echo -ne \033]0;"$*"\007"
 "}
-" ステータスラインとかに色つかないときのおまじない
-if !has('gui_running')
-set t_Co=256
-endif
-
 

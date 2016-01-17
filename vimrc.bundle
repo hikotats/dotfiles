@@ -17,6 +17,7 @@ NeoBundle 'Shougo/neocomplete.vim'           " neocomplete
 NeoBundle 'Shougo/neocomplcache'             " neocomplecache
 NeoBundle 'Shougo/neosnippet.vim'            " neosnippet
 NeoBundle 'Shougo/neosnippet-snippets'       " neosnippet-snippets
+NeoBundle 'honza/vim-snippets'               " vim-snippets
 NeoBundle 'scrooloose/nerdtree'              " nerdtree
 NeoBundle 'tpope/vim-pathogen'               " pathogen
 NeoBundle 'Shougo/vimfiler'                  " vimfiler
@@ -30,6 +31,7 @@ NeoBundle 'altercation/vim-colors-solarized' " solarized
 NeoBundle 'vim-scripts/taglist.vim'          " taglist
 NeoBundle 'kannokanno/previm'                " previm
 NeoBundle 'tyru/open-browser.vim'            " open browser
+NeoBundle 'terryma/vim-expand-region'        " vim-expand-region
 NeoBundle 'vim-jp/vimdoc-ja'                 " vimdoc
 NeoBundle 'h1mesuke/vim-alignta'             " alinta
 NeoBundle 'glidenote/memolist.vim'           " memolist
@@ -55,7 +57,7 @@ NeoBundle 'marijnh/tern_for_vim', {
 \   'others': 'npm install'
 \}}
 NeoBundle 'basyura/jslint.vim'               " jslint
-NeoBundle 'JavaScript-Indent'                " JavaScript-Indent
+" NeoBundle 'JavaScript-Indent'                " JavaScript-Indent
 " NeoBundle 'nathanaelkane/vim-indent-guides'  " indent guides
 " NeoBundle 'taichouchou2/html5.vim'           " html5
 NeoBundle 'motemen/xslate-vim'               " xslate

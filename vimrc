@@ -6,8 +6,6 @@ source $HOME/dotfiles/vimrc.basic
 source $HOME/dotfiles/vimrc.keymap
 " $HOME/dotfiles/vimrc.plugins
 source $HOME/dotfiles/vimrc.plugins
-" $HOME/dotfiles/vimrc.taglist
-source $HOME/dotfiles/vimrc.taglist
 " $HOME/dotfiles/vimrc.memolist
 source $HOME/dotfiles/vimrc.memolist
 " $HOME/dotfiles/vimrc.js
