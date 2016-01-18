@@ -1,0 +1,140 @@
+# Backbone.Model
+snippet BBM
+  var ${1:#:Model} = Backbone.Model.extend({
+    ${2}
+  });
+# initialize
+snippet init
+  initialize: function (${1}) {
+    ${2}
+  }
+#default
+snippet defaults
+  defaults: {
+    ${0}
+  }
+# set
+snippet .set
+options word
+  .set({${1}: ${0}})
+# get
+snippet .get
+options word
+  .get("${0}")
+# at
+snippet .at
+options word
+  .at(${0})
+# save
+snippet .save
+options word
+  .save()
+# Bakcbone.Collection
+snippet BBC
+  var ${1:#:Collection} = Backbone.Collection.extend({
+    model: ${2}
+  });
+# each
+snippet .each
+options word
+  .each(function (${1:#:item}, ${2:#:index}) {
+    ${0}
+  });
+# find
+snippet .find
+options word
+  .find(function (${1:#:item}) {
+    return ${2:#:item}.get(${3}) === ${0};
+  });
+# filter
+snippet .filter
+options word
+  .filter(function (${1:#:item}) {
+    return ${2:#:item}.get(${3}) === ${0};
+  });
+# where
+snippet .where
+options word
+  .where({${1}: ${0}})
+# max
+snippet .max
+options word
+  .max(function (${1:#:item}) {
+    return ${2}.get(${3});
+  });
+# map
+snippet .map
+options word
+  .map(function (${1:#:item}) {
+    return ${2:#:item}.get(${0});
+  });
+# reduce
+snippet .reduce
+options word
+  .reduce(function (${1:#:memo}, ${2:#:item}) {
+    return ${3:#:memo} + ${4:#:item}.get(${5});
+  }, ${0});
+# pluck
+snippet .pluck
+options word
+  .pluck(${0})
+# Backbone.View
+snippet BBV
+  var ${1:#:View} = Backbone.View.extend({
+    el: ${2},
+    tagName: ${3},
+    className: ${4},
+    ${5}
+  });
+# events
+snippet events
+  events: {
+    ${1}
+  }
+# listenTo
+snippet listenTo
+  ${1:this}.listenTo(${2:this.model}, '${3:#:event}', this.${4:callback});
+# listenToOnce
+snippet listenToOnce
+  ${1:this}.listenToOnce(${2:this.model}, '${3:#:event}', this.${4:callback});
+# stopListening
+snippet stopListening
+  ${1:this}.stopListening(${2:this.model}, '${3:#:event}');
+# Backbone.Sync
+snippet BBS
+  var ${1:#:Sync} = Backbone.Sync.extend({
+    ${0}
+  });
+# Backbone.Router
+snippet BBR
+  var ${1:#:Router} = Backbone.Router.extend({
+    ${0}
+  });
+# routes
+snippet routes
+  routes: {
+    ${0}
+  }
+# Backbone.History
+snippet BBH
+  var ${1:#:History} = Backbone.History.extend({
+    ${0}
+  });
+# Backbone.Marionette.LayoutView
+snippet BML
+  var ${1} = Backbone.Marionette.LayoutView({
+    ${2}
+  });
+# Backbone.Marionette.CollectionView
+snippet BMC
+  var ${1} = Backbone.Marionette.CollectionView({
+    ${2}
+  });
+# Backbone.Marionette.ItemView
+snippet BMI
+  var ${1} = Backbone.Marionette.ItemView({
+    ${2}
+  });
+# Backbone.Marionette.Application
+snippet BMA
+  var ${1} = new Backbone.Marionette.Application();

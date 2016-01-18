@@ -9,6 +9,7 @@ set helpheight=999
 set backspace=indent,eol,start " インサートモード時にバックスペースを使う
 set hlsearch
 set ignorecase
+set splitright
 
 " 内部の文字コード（ブランクバッファの文字コードに影響）
 set enc=utf-8

@@ -7,7 +7,7 @@ nnoremap <Leader>. :<C-u>tabedit $MYVIMRC<CR>
 nnoremap <Leader>, :<C-u>tabedit ~/dotfiles/vimrc.keymap<CR>
 
 " vimrcの設定を反映
-nnoremap <Leader><Space>.. :<C-u>source $MYVIMRC<CR>
+nnoremap <Leader><Leader>.. :<C-u>source $MYVIMRC<CR>
 
 " snippetを瞬時に開く
 nnoremap <Leader>\ :<C-u>tabedit ~/.vim/bundle/vim-snippets/snippets/<CR>
@@ -23,6 +23,8 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>o :CtrlP<CR>
 " ファイルを閉じる
 nnoremap <Leader>q :q<CR>
+" 新規垂直タブ
+nnoremap <Leader>v :vnew<CR>
 " Enterで改行 insert
 nnoremap <CR> o
 nnoremap <S-CR> O
@@ -95,7 +97,7 @@ vnoremap <C-p> "0p<CR>"
 " NERDTreeToggle 
 nnoremap <silent><Leader>e :NERDTreeToggle<CR>
 " \lでtaglistウインドウを開いたり閉じたり出来るショートカット"
-map  <Leader>l :TlistToggle<CR>
+nmap  <Leader>l :TagbarToggle<CR>
 
 " ctrl + / で選択範囲のコメントアウト切り替え
 nmap <C-_> <Plug>(caw:i:toggle)

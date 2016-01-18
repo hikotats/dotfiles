@@ -28,7 +28,8 @@ NeoBundle 'mattn/calendar-vim'               " calendar-vim
 NeoBundle 'tomasr/molokai'                   " molokai
 NeoBundle 'sickill/vim-monokai'              " monokai
 NeoBundle 'altercation/vim-colors-solarized' " solarized
-NeoBundle 'vim-scripts/taglist.vim'          " taglist
+" NeoBundle 'vim-scripts/taglist.vim'          " taglist
+NeoBundle 'majutsushi/tagbar'                " tagbar
 NeoBundle 'kannokanno/previm'                " previm
 NeoBundle 'tyru/open-browser.vim'            " open browser
 NeoBundle 'terryma/vim-expand-region'        " vim-expand-region
