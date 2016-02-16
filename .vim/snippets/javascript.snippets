@@ -159,7 +159,7 @@ snippet sing
 		return instance;
 	}
 # Crockford's object function
-snippet obj
+snippet F
 options head
 	function object(o) {
 		function F() {}
@@ -220,10 +220,12 @@ snippet @ret
 
 # JSON.parse
 snippet jsonp
-	JSON.parse(${0:jstr});
+options word
+	JSON.parse(${0:jstr})
 # JSON.stringify
 snippet jsons
-	JSON.stringify(${0:object});
+options word
+	JSON.stringify(${0:object})
 
 # DOM selectors
 
