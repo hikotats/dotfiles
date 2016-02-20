@@ -1,8 +1,14 @@
 # Backbone.Model
 snippet BBM
-  var ${1:#:Model} = Backbone.Model.extend({
-    ${2}
+  module.exports = Backbone.Model.extend({
+    ${0}
   });
+#urlRoot
+snippet urlRoot
+  urlRoot: "${0:#:/path}"
+#idAttribute
+snippet idAttribute
+  idAttribute: "${0:_id}"
 # initialize
 snippet init
   initialize: function (${1}) {
@@ -31,8 +37,8 @@ options word
   .save()
 # Bakcbone.Collection
 snippet BBC
-  var ${1:#:Collection} = Backbone.Collection.extend({
-    model: ${2}
+  module.exports = Backbone.Collection.extend({
+    model: ${0}
   });
 # each
 snippet .each
@@ -80,7 +86,7 @@ options word
   .pluck(${0})
 # Backbone.View
 snippet BBV
-  var ${1:#:View} = Backbone.View.extend({
+  module.exports = Backbone.View.extend({
     ${0}
   });
 # events
@@ -90,13 +96,16 @@ snippet events
   }
 # listenTo
 snippet listenTo
-  ${1:this}.listenTo(${2:this.model}, '${3:#:event}', this.${4:callback});
+options word
+  listenTo(${2:this.model}, '${3:#:event}', this.${4:callback});
 # listenToOnce
 snippet listenToOnce
-  ${1:this}.listenToOnce(${2:this.model}, '${3:#:event}', this.${4:callback});
+options word
+  listenToOnce(${2:this.model}, '${3:#:event}', this.${4:callback});
 # stopListening
 snippet stopListening
-  ${1:this}.stopListening(${2:this.model}, '${3:#:event}');
+options word
+ stopListening(${2:this.model}, '${3:#:event}');
 # Backbone.Sync
 snippet BBS
   var ${1:#:Sync} = Backbone.Sync.extend({
@@ -104,7 +113,7 @@ snippet BBS
   });
 # Backbone.Router
 snippet BBR
-  var ${1:#:Router} = Backbone.Router.extend({
+  module.exports = Backbone.Router.extend({
     ${0}
   });
 # routes

@@ -29,6 +29,9 @@ nnoremap <Leader>v :vnew<CR>
 nnoremap <CR> o
 nnoremap <S-CR> O
 
+" 検索のハイライトを消す
+nnoremap <ESC><ESC> :noh<CR>
+
 " システムのクリップボードにコピー＆ペーストする
 vmap <Leader>y "+y
 vmap <Leader>d "+d
