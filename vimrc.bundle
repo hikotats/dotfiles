@@ -68,7 +68,7 @@ NeoBundle 'tomtom/tcomment_vim'              " tcomment
 NeoBundle 'vim-scripts/matchit.zip'          " matchit
 NeoBundle 'thinca/vim-ref'                   " ref
 NeoBundle 'mattn/excitetranslate-vim'        " 翻訳
-" NeoBundle 'scrooloose/syntastic'             " syntastic
+NeoBundle 'scrooloose/syntastic'             " syntastic
 " NeoBundle 'tyru/caw.vim'
 " NeoBundle 'h1mesuke/unite-outline'           " unite outline
 " NeoBundle 'itchyny/lightline.vim'            " lightline

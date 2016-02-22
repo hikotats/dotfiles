@@ -114,6 +114,7 @@ nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
 
 nnoremap <Leader>js :set filetype=javascript<CR>
 nnoremap <Leader>html :set filetype=html<CR>
+nnoremap <Leader>md :set filetype=markdown<CR>
 
 " memolist keymap
 " メモ関連マッピング
