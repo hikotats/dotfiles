@@ -11,6 +11,7 @@ nnoremap <Leader><Leader>.. :<C-u>source $MYVIMRC<CR>
 
 " snippetを瞬時に開く
 nnoremap <Leader>\ :<C-u>tabedit ~/.vim/bundle/vim-snippets/snippets/<CR>
+nnoremap <Leader>ns :execute "tabnew\|:NeoSnippetEdit ".&filetype<CR>
 
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
@@ -115,6 +116,8 @@ nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
 nnoremap <Leader>js :set filetype=javascript<CR>
 nnoremap <Leader>html :set filetype=html<CR>
 nnoremap <Leader>md :set filetype=markdown<CR>
+nnoremap <Leader>c :set filetype=c<CR>
+nnoremap <Leader>cpp :set filetype=cpp<CR>
 
 " memolist keymap
 " メモ関連マッピング

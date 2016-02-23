@@ -14,7 +14,7 @@ NeoBundle 'ujihisa/unite-colorscheme'        " unite-colorscheme
 NeoBundle 'Shougo/vimproc'                   " vimproc
 NeoBundle 'Shougo/neomru.vim'                " neomru
 NeoBundle 'Shougo/neocomplete.vim'           " neocomplete
-NeoBundle 'Shougo/neocomplcache'             " neocomplecache
+" NeoBundle 'Shougo/neocomplcache'             " neocomplecache
 NeoBundle 'Shougo/neosnippet.vim'            " neosnippet
 NeoBundle 'Shougo/neosnippet-snippets'       " neosnippet-snippets
 NeoBundle 'honza/vim-snippets'               " vim-snippets
