@@ -1,0 +1,77 @@
+snippet cc.Sc
+  var ${1:Scene} = cc.Scene.extend({
+    ${2:onEnter}: function () {
+      this._super();
+      gameLayer = new GameLayer();
+      gameLayer.init();
+      this.addChild(gameLayer);
+    }
+  });
+snippet cc.La
+  var ${1:Layer} = cc.Layer.extend({
+    ${2:init}: function () {
+      this._super();
+    }
+  });
+snippet cc.Sp
+options word
+  cc.Sprite.extend({
+    ${0}
+  })
+snippet addChild
+options word
+  addChild(${1})
+snippet removeChild
+options word
+  removeChild(${1})
+snippet cc.LC
+options word
+  cc.LayerColor.create(${1:})
+snippet cc.LG
+  cc.LayerGradient.create(${1:})
+snippet cc.color
+  cc.color(${1}, ${2}, ${3}, ${4})
+snippet setP
+options word
+  setPosition(${1}, ${2})
+snippet getP
+options word
+  getPosition(${1}, ${2})${0}
+snippet initWith
+options word
+  initWithFile(${1})
+snippet cc.eventM
+options word
+  cc.eventManager.addListener(${1});
+snippet cc.Event
+options head
+  var ${1:#:listener} = cc.EventListener.create({
+    event: cc.EventListener.${2:#:TOUCH_ONE_BY_ONE},
+    ${0}
+  });
+snippet cc.Label
+options word
+  cc.LabelTTF.create("${1}", "${2:#:Arial}", "${3:#:32}", cc.TEXT_ALIGNMENT_${4:#:CENTER})
+snippet cc.Move
+options word
+  cc.MoveTo.create(${1})
+snippet ctor
+options word
+  ctor: function () {
+    this._super();
+    this.initWithFile(${1})
+    ${0}
+  }
+snippet shuffle
+options head
+  var shuffle = function (v) {
+    for (var j, x, i = v.length; i; j = parseInt(Math.random() * i), x = v[--i], v[i] = v[j], v[j] = x);
+    return v;
+  }
+snippet emitter
+  emitter = cc.ParticleSun.create();
+  this.addChild(emitter, 1);
+  var ${1} = cc.textureCache.addImage(${2});
+  emitter.setTexture($1);
+  emitter.setStartSize(${2});
+  emitter.setEndSize(${3});
