@@ -93,3 +93,4 @@ filetype indent on
 "  echo -ne \033]0;"$*"\007"
 "}
 
+set path+=~/.cabal/bin/pandoc

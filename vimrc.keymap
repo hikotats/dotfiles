@@ -133,6 +133,11 @@ nnoremap ML :MemoList
 nnoremap MF :MemoFiler
 nnoremap MG :MemoGrep
 
+" expand path
+cmap <c-x> <c-r>=expand('%:p:h')<cr>/
+" expand file (not ext)
+cmap <c-z> <c-r>=expand('%:p:r')<cr>
+
 " Unite keymap
 " prefix keyの設定
 nnoremap [unite] <Nop>
