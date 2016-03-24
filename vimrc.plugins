@@ -123,25 +123,44 @@ let QFixHowm_ListReminder_ScheExt = '[-@+!~.]'
 "
 " }}}
 " Previm {{{
-let g:previm_open_cmd = 'open -a Safari'
+let g:previm_open_cmd = 'open -a Chrome'
 " }}}
 " neocomplete {{{
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
+" 補完が自動で開始される文字数
+" let g:neocomplete#auto_completion_start_length = 3
+" smarrt case有効化。 大文字が入力されるまで大文字小文字の区別を無視する
 let g:neocomplete#enable_smart_case = 1
+" camle caseを有効化。大文字を区切りとしたワイルドカードのように振る舞う
+let g:neocomplete#enable_camel_case_completion = 1
+" _(アンダーバー)区切りの補完を有効化
+let g:neocomplete#enable_underbar_completion = 1
+" シンタックスをキャッシュするときの最小文字長を3に
+let g:neocomplete#min_syntax_length = 3
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
+" neocompleteを自動的にロックするバッファ名のパターン
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" -入力による候補番号の表示
+let g:neocomplete#enable_quick_match = 1
+" 補完候補の一番先頭を選択状態にする(AutoComplPopと似た動作)
+let g:neocomplete#enable_auto_select = 1
+"ポップアップメニューで表示される候補の数。初期値は100
+let g:neocomplete#max_list = 20
+
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+  \ 'default' : '',
+  \ 'vimshell' : $HOME.'/.vimshell_hist',
+  \ 'scheme' : $HOME.'/.gosh_completions',
+  \ 'javascript' : '~/.vim/dict/javascript.dict,~/.vim/dict/jquery.dict',
+  \ 'markdown' : $HOME.'/Dropbox/dict/hentai.dict'
+  \ }
+
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -149,9 +168,19 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
+
+if !exists('g:neocomplete#text_mode_filetypes')
+    let g:neocomplete#text_mode_filetypes = {}
+endif
+let g:neocomplete#text_mode_filetypes = {
+  \ 'markdown': 1,
+  \ 'text': 1
+  \ }
+
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -167,16 +196,8 @@ inoremap <expr><C-j>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
-" AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
-
-" Shell like behavior(not recommended).
-"set completeopt+=longest
-"let g:neocomplete#enable_auto_select = 1
-"let g:neocomplete#disable_auto_complete = 1
-"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -185,18 +206,19 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-" }}}
+" }}} 
 " neocomplcache {{{
 " Disable AutoComplPop.
 " let g:acp_enableAtStartup = 0
@@ -212,12 +234,6 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " let g:neocomplcache_min_syntax_length = 3
 " let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
-" Define dictionary.
-" let g:neocomplcache_dictionary_filetype_lists = {
-"     \ 'default' : '',
-"     \ 'vimshell' : $HOME.'/.vimshell_hist',
-"     \ 'scheme' : $HOME.'/.gosh_completions'
-" \ }
 " Define keyword.
 " if !exists('g:neocomplcache_keyword_patterns')
 "     let g:neocomplcache_keyword_patterns = {}
@@ -240,9 +256,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#disable_runtime_snippets = {'_' : 1}
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" let g:neosnippet#enable_snipmate_compatibility = 1
+" let g:neosnippet#disable_runtime_snippets = {'_' : 1}
+let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets,~/.vim/bundle/neosnippet-snippets/neosnippets'
+
 " }}}
 " taglist {{{
 set tags=tags
@@ -255,4 +272,14 @@ let Tlist_Exit_OnlyWindow = 1
 let g:tlist_javascript_settings = 'javascript;c:class;m:method;f:function;p:property'
 " let s:tlist_def_javascript_settings = 'javascript;f:function;c:class;m:method;p:property'
 
+" }}}
+" hateblo {{{
+let g:hateblo_vim = {
+    \ 'user':         'sekilberg',
+    \ 'api_key':      'zde3vrq8b4',
+    \ 'api_endpoint': 'https://blog.hatena.ne.jp/sekilberg/ratatatat30.hatenablog.jp/atom',
+    \ 'WYSIWYG_mode': 0,
+    \ 'always_yes':   0,
+    \ 'edit_command': 'edit'
+\ }
 " }}}

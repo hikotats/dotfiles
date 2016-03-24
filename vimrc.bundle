@@ -38,9 +38,10 @@ NeoBundle 'h1mesuke/vim-alignta'             " alinta
 NeoBundle 'glidenote/memolist.vim'           " memolist
 NeoBundle 'ctrlpvim/ctrlp.vim'               " ctrlp
 NeoBundle 'mattn/webapi-vim'                 " webapi
-NeoBundle 'mattn/unite-advent_calendar'      " advent_calendar
+NeoBundle 'moznion/hateblo.vim'              " hateblo
 NeoBundle 'fuenor/qfixgrep'
 NeoBundle 'fuenor/qfixhowm'
+NeoBundle 'ujihisa/neco-look'                " neco-look
 NeoBundle 'mattn/emmet-vim'                  " emmet
 NeoBundle 'tpope/vim-surround'               " surround
 NeoBundle 'kana/vim-smartinput'              " smartinput
