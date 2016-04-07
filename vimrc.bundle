@@ -16,7 +16,7 @@ NeoBundle 'Shougo/neomru.vim'                " neomru
 NeoBundle 'Shougo/neocomplete.vim'           " neocomplete
 " NeoBundle 'Shougo/neocomplcache'             " neocomplecache
 NeoBundle 'Shougo/neosnippet.vim'            " neosnippet
-NeoBundle 'Shougo/neosnippet-snippets'       " neosnippet-snippets
+" NeoBundle 'Shougo/neosnippet-snippets'       " neosnippet-snippets
 NeoBundle 'honza/vim-snippets'               " vim-snippets
 NeoBundle 'scrooloose/nerdtree'              " nerdtree
 NeoBundle 'tpope/vim-pathogen'               " pathogen
