@@ -10,3 +10,7 @@ source $HOME/dotfiles/vimrc.plugins
 source $HOME/dotfiles/vimrc.memolist
 " $HOME/dotfiles/vimrc.js
 source $HOME/dotfiles/vimrc.js
+" $HOME/dotfiles/vimrc.hateblo
+source $HOME/dotfiles/vimrc.hateblo
+" $HOME/dotfiles/vimrc.gist
+source $HOME/dotfiles/vimrc.gist

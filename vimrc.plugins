@@ -2,11 +2,9 @@
 " runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
 " updatetime が一時的に書き換えられてしまうので注意して下さい
 let g:quickrun_config = {}
-let g:quickrun_config = {
-      \ "_" : {
-      \      "runner" : "vimproc",
-      \      "runner/vimproc/updatetime" : 60
-      \    },
+let g:quickrun_config._ = {
+      \   'runner' : 'vimproc',
+      \   'runner/vimproc/updatetime' : 60
       \ }
 let g:quickrun_config['markdown'] = {
       \  'outputter' : 'browser',
@@ -96,12 +94,6 @@ let g:airline_symbols.branch = '⭠'
 let g:airline#extensions#tabline#left_sep = '⮀'
 let g:airline#extensions#tabline#left_alt_sep = '⮀'
 " /=Airline }}}1
-" gist-vim "{{{
-let g:github_user = 'hikotats'
-let g:github_token = '78170778a29b5242a976e433acf9c8c6d2c2de0b'
-let g:gist_post_private = 1
-let g:gist_open_browser_after_post = 1
-" }}}
 " qfixhowm {{{
 " ファイル拡張子をmdにする
 let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
@@ -266,14 +258,4 @@ let Tlist_Exit_OnlyWindow = 1
 let g:tlist_javascript_settings = 'javascript;c:class;m:method;f:function;p:property'
 " let s:tlist_def_javascript_settings = 'javascript;f:function;c:class;m:method;p:property'
 
-" }}}
-" hateblo {{{
-let g:hateblo_vim = {
-    \ 'user':         'sekilberg',
-    \ 'api_key':      'zde3vrq8b4',
-    \ 'api_endpoint': 'https://blog.hatena.ne.jp/sekilberg/ratatatat30.hatenablog.jp/atom',
-    \ 'WYSIWYG_mode': 0,
-    \ 'always_yes':   0,
-    \ 'edit_command': 'edit'
-\ }
 " }}}
