@@ -16,9 +16,6 @@ nnoremap <Leader><Leader>.. :<C-u>source $MYVIMRC<CR>
 nnoremap <Leader>\ :<C-u>tabedit ~/.vim/bundle/vim-snippets/snippets/<CR>
 nnoremap <Leader>ns :execute "tabnew\|:NeoSnippetEdit ".&filetype<CR>
 nnoremap <Leader>vs :execute "vnew ~/.vim/bundle/vim-snippets/snippets/"<CR>
-nnoremap <Leader>hc :HatebloCreate<CR>
-nnoremap <Leader>hd :HatebloCreateDraft<CR>
-nnoremap <Leader>hb :execute "OpenBrowser ".hatebloUrl<CR>
 
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
@@ -140,6 +137,10 @@ nnoremap MG :MemoGrep
 nnoremap VF :VimFiler
 nnoremap VS :VimShell
 nnoremap PO :PrevimOpen
+
+nnoremap HC :HatebloCreate
+nnoremap HD :HatebloCreateDraft
+nnoremap HB :execute "OpenBrowser ".hatebloUrl
 
 " expand path
 cmap <c-x> <c-r>=expand('%:p:h')<cr>/

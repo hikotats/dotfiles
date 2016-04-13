@@ -108,7 +108,7 @@ options word
 snippet appendTo
 options word
 	appendTo('${2:selector expression}')
-snippet attr
+snippet attr_jq
 options word
 	attr('${2:attribute}', '${3:value}')
 snippet attrm
@@ -117,7 +117,7 @@ options word
 snippet before
 options word
 	before('${2:Some text <b>and bold!</b>}')
-snippet bind
+snippet bind_jq
 options word
 	bind('${2:event name}', function (${3:e}) {
 		${0:// event handler}
@@ -169,18 +169,18 @@ options word
 snippet clearq
 options word
   clearQueue(${2:'queue name'})
-snippet click
+snippet click_jq
 options word
   click(function (${2:e}) {
 		${0:// event handler}
 	});
-snippet clone
+snippet clone_jq
 options word
 	clone()
 snippet contains
 options word
 	$.contains(${1:container}, ${0:contents});
-snippet css
+snippet css_jq
 options word
 	css('${2:attribute}', '${3:value}')
 snippet csshooks
@@ -285,7 +285,7 @@ options word
 	each(function (index) {
 		${0:this.innerHTML = this + " is the element, " + index + " is the position";}
 	});
-snippet el
+snippet el_jq
 options word
 	$('<${1}/>'${2:, {}})
 snippet eltrim
@@ -300,7 +300,7 @@ options word
 snippet eq
 options word
   eq(${2:element index})
-snippet error
+snippet error_jq
 options word
   error(function (${2:e}) {
 		${0:// event handler}
@@ -310,7 +310,7 @@ options word
 	{
 		:f${0}
 	}
-snippet extend
+snippet extend_jq
 options word
 	$.extend(${1:true, }${2:target}, ${3:obj})
 snippet fadein
@@ -337,7 +337,7 @@ options word
   fadeTo('slow/400/fast', ${2:0.5}, function () {
 		${0:// callback};
 	});
-snippet filter
+snippet filter_jq
 options word
   filter('${2:selector expression}')
 snippet filtert
@@ -345,7 +345,7 @@ options word
   filter(function (${2:index}) {
 		${3}
 	})
-snippet find
+snippet find_jq
 options word
 	find('${2:selector expression}')
 snippet focus
@@ -363,7 +363,7 @@ options word
   focusOut(function (${2:e}) {
 		${0:// event handler}
 	});
-snippet get
+snippet get_jq
 options word
   get(${2:element index})
 snippet getjson
@@ -390,7 +390,7 @@ options word
 snippet hasd
 options word
 	$.hasData('${0:selector expression}');
-snippet height
+snippet height_jq
 options word
   height(${2:integer})
 snippet hide
@@ -401,7 +401,7 @@ options word
   hide('${2:slow/400/fast}', function () {
 		${0:// callback}
 	});
-snippet hover
+snippet hover_jq
 options word
   hover(function (${2:e}) {
 		${3:// event handler}
@@ -423,19 +423,19 @@ options word
 snippet is
 options word
   is('${2:selector expression}')
-snippet isarr
+snippet isarr_jq
 options word
 	$.isArray(${1:obj})
 snippet isempty
 options word
 	$.isEmptyObject(${1:obj})
-snippet isfunc
+snippet isfunc_jq
 options word
 	$.isFunction(${1:obj})
-snippet isnum
+snippet isnum_jq
 options word
 	$.isNumeric(${1:value})
-snippet isobj
+snippet isobj_jq
 options word
 	$.isPlainObject(${1:obj})
 snippet iswin
@@ -486,7 +486,7 @@ options word
 snippet makearray
 options word
 	$.makeArray(${0:obj});
-snippet map
+snippet map_jq
 options word
   map(function (${2:index}, ${3:element}) {
 		${0:// callback}
@@ -534,7 +534,7 @@ options word
   mouseup(function (${2:e}) {
 		${0:// event handler}
 	});
-snippet next
+snippet next_jq
 options word
   next('${2:selector expression}')
 snippet nexta
@@ -555,12 +555,12 @@ options word
 snippet offsetp
 options word
   offsetParent()
-snippet on
+snippet on_jq
 options word
   on('${2:events}', '${3:selector expression}', function (${4:e}) {
 		${0:// event handler}
 	});
-snippet one
+snippet one_jq
 options word
   one('${2:event name}', function (${3:e}) {
 		${0:// event handler}
@@ -610,7 +610,7 @@ options word
 snippet promise
 options word
   promise(${2:'fx'}, ${3:target})
-snippet prop
+snippet prop_jq
 options word
   prop('${2:property name}')
 snippet proxy
@@ -730,10 +730,10 @@ options word
   slideUp('${2:slow/400/fast}', function () {
 		${0:// callback};
 	});
-snippet text
+snippet text_jq
 options word
   text(${2:'some text'})
-snippet this
+snippet this_jq
 options word
 	$(this)
 snippet toarr
@@ -782,10 +782,10 @@ options word
 snippet unwrap
 options word
   unwrap()
-snippet val
+snippet val_jq
 options word
   val('${2:text}')
-snippet width
+snippet width_jq
 options word
   width(${2:integer})
 snippet wrap
