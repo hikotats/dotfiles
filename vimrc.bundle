@@ -73,6 +73,7 @@ NeoBundle 'scrooloose/syntastic'             " syntastic
 " NeoBundle 'tyru/caw.vim'
 " NeoBundle 'h1mesuke/unite-outline'           " unite outline
 " NeoBundle 'itchyny/lightline.vim'            " lightline
+NeoBundle 'sbl/scvim'                        " scvim
 " :help neobundle-example
 
 call neobundle#end()
