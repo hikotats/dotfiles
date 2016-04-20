@@ -70,6 +70,7 @@ nnoremap - <C-x><Left>
 " 挿入モードでのカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 inoremap <C-a> <HOME>
 nnoremap <C-a> <HOME>
 inoremap <C-e> <END>
@@ -120,6 +121,7 @@ nnoremap <Leader>html :set filetype=html<CR>
 nnoremap <Leader>md :set filetype=markdown<CR>
 nnoremap <Leader>c :set filetype=c<CR>
 nnoremap <Leader>cpp :set filetype=cpp<CR>
+nnoremap <Leader>sc :set filetype=sc<CR>
 
 " memolist keymap
 " メモ関連マッピング
