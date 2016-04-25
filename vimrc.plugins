@@ -146,11 +146,12 @@ let g:neocomplete#enable_auto_select = 0
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-  \ 'default' : '',
-  \ 'vimshell' : $HOME.'/.vimshell_hist',
-  \ 'scheme' : $HOME.'/.gosh_completions',
+  \ 'default'    : '',
+  \ 'vimshell'   : $HOME.'/.vimshell_hist',
+  \ 'scheme'     : $HOME.'/.gosh_completions',
+  \ 'php'        : $HOME.'/Dropbox/dict/php.dict',
   \ 'javascript' : '~/Dropbox/dict/javascript.dict,~/Dropbox/dict/jquery.dict,~/Dropbox/dict/lodash.dict',
-  \ 'markdown' : $HOME.'/Dropbox/dict/hentai.dict'
+  \ 'markdown'   : $HOME.'/Dropbox/dict/hentai.dict'
   \ }
 
 

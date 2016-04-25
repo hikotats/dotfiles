@@ -121,6 +121,7 @@ nnoremap <Leader>html :set filetype=html<CR>
 nnoremap <Leader>md :set filetype=markdown<CR>
 nnoremap <Leader>c :set filetype=c<CR>
 nnoremap <Leader>cpp :set filetype=cpp<CR>
+nnoremap <Leader>php :set filetype=php<CR>
 nnoremap <Leader>sc :set filetype=sc<CR>
 
 " memolist keymap

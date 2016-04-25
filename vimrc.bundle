@@ -30,7 +30,7 @@ NeoBundle 'sickill/vim-monokai'              " monokai
 NeoBundle 'altercation/vim-colors-solarized' " solarized
 NeoBundle 'vim-scripts/taglist.vim'          " taglist
 NeoBundle 'majutsushi/tagbar'                " tagbar
-NeoBundle 'vim-scripts/tagbar-phpctags'       " tagbar-phptags
+NeoBundle 'vim-scripts/tagbar-phpctags'      " tagbar-phptags
 NeoBundle 'kannokanno/previm'                " previm
 NeoBundle 'tyru/open-browser.vim'            " open browser
 NeoBundle 'terryma/vim-expand-region'        " vim-expand-region
