@@ -62,15 +62,6 @@ setopt auto_cd
 # パス
 # -------------------------------------
 
-# 重複する要素を自動的に削除
-typeset -U path cdpath fpath manpath
-
-path=(
-    $HOME/bin(N-/)
-    /usr/local/bin(N-/)
-    /usr/local/sbin(N-/)
-    $path
-)
 
 # -------------------------------------
 # プロンプト
@@ -149,9 +140,3 @@ function title {
 
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-export PATH=$PATH:$HOME/.cabal/bin
-export PATH=$PATH:$HOME/.nodebrew/current/bin
-export PATH=$PATH:/usr/local/bin/
-export PATH=$PATH:$HOME/Library/Android/sdk/tools/
-export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools/
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig

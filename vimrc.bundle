@@ -14,7 +14,7 @@ NeoBundle 'ujihisa/unite-colorscheme'        " unite-colorscheme
 NeoBundle 'Shougo/vimproc'                   " vimproc
 NeoBundle 'Shougo/neomru.vim'                " neomru
 NeoBundle 'Shougo/neocomplete.vim'           " neocomplete
-" NeoBundle 'Shougo/neocomplcache'             " neocomplecache
+NeoBundle 'violetyk/neocomplete-php.vim'     " neocomplete-php
 NeoBundle 'Shougo/neosnippet.vim'            " neosnippet
 " NeoBundle 'Shougo/neosnippet-snippets'       " neosnippet-snippets
 NeoBundle 'honza/vim-snippets'               " vim-snippets
@@ -28,8 +28,9 @@ NeoBundle 'mattn/calendar-vim'               " calendar-vim
 NeoBundle 'tomasr/molokai'                   " molokai
 NeoBundle 'sickill/vim-monokai'              " monokai
 NeoBundle 'altercation/vim-colors-solarized' " solarized
-" NeoBundle 'vim-scripts/taglist.vim'          " taglist
+NeoBundle 'vim-scripts/taglist.vim'          " taglist
 NeoBundle 'majutsushi/tagbar'                " tagbar
+NeoBundle 'vim-scripts/tagbar-phpctags'       " tagbar-phptags
 NeoBundle 'kannokanno/previm'                " previm
 NeoBundle 'tyru/open-browser.vim'            " open browser
 NeoBundle 'terryma/vim-expand-region'        " vim-expand-region
@@ -74,6 +75,9 @@ NeoBundle 'scrooloose/syntastic'             " syntastic
 " NeoBundle 'h1mesuke/unite-outline'           " unite outline
 " NeoBundle 'itchyny/lightline.vim'            " lightline
 NeoBundle 'sbl/scvim'                        " scvim
+NeoBundle 'mhinz/vim-startify'               " startify
+NeoBundle 'AndrewRadev/splitjoin.vim'        " splitjoin
+
 " :help neobundle-example
 
 call neobundle#end()
