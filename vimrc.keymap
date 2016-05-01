@@ -53,7 +53,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 "
 " insertモードから抜ける
 inoremap <silent> <C-c> <ESC>
-inoremap <silent> <C-j> <ESC>
+inoremap <silent> ;; <ESC>
 
 " ノーマルモード時だけ ; と : を入れ替える
 nnoremap ; :
@@ -76,7 +76,7 @@ nnoremap <C-a> <HOME>
 inoremap <C-e> <END>
 nnoremap <C-e> <END>
 inoremap <C-f> <Right>
-inoremap <C-b> <Left>
+inoremap <C-b> <BS>
 inoremap <C-d> <Del>
 
 " Tab navigation

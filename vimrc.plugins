@@ -24,22 +24,6 @@ let g:quickrun_config['babel'] = {
 " quickrun.vim が実行していない場合には <C-c> を呼び出す
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 " }}}
-" vim-indent-guides {{{
-" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
-" let g:indent_guides_enable_on_vim_startup = 1
-" ガイドの幅
-" let g:indent_guides_guide_size = 1
-" 1インデント目からガイドする
-" let g:indent_guides_start_level = 2
-" 自動カラーを無効にして手動で設定する
-" let g:indent_guides_auto_colors = 0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=110
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=140
-" 奇数インデントのガイドカラー
-" hi IndentGuidesOdd  ctermbg=cyan
-" 偶数インデントのガイドカラー
-" hi IndentGuidesEven ctermbg=yellow
-" }}}
 " Unite {{{
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 " 入力モードで開始する
@@ -67,6 +51,7 @@ let g:solarized_underline=1
 let g:solarized_italic=1
 let g:solarized_contrast='normal'
 let g:solarized_visibility='normal'
+autocmd VimEnter,Colorscheme * hi SpecialKey gui=none guibg=#002b36
 " }}}
 " Airline {{{
 "let g:airline_section_a = airline#section#create(['mode','','branch'])
@@ -149,7 +134,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
   \ 'default'    : '',
   \ 'vimshell'   : $HOME.'/.vimshell_hist',
   \ 'scheme'     : $HOME.'/.gosh_completions',
-  \ 'php'        : $HOME.'/Dropbox/dict/php.dict',
+  \ 'php'        : '~/Dropbox/dict/php.dict,~/Dropbox/dict/wordpress.dict',
   \ 'javascript' : '~/Dropbox/dict/javascript.dict,~/Dropbox/dict/jquery.dict,~/Dropbox/dict/lodash.dict',
   \ 'markdown'   : $HOME.'/Dropbox/dict/hentai.dict'
   \ }
@@ -171,16 +156,15 @@ let g:neocomplete#text_mode_filetypes = {
   \ }
 
 " Recommended key-mappings.
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-inoremap <CR> <C-r>=<SID>my_cr_function()<CR>
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
     return neocomplete#smart_close_popup() . "\<CR>"
 endfunction
 " Plugin key-mappings.
-inoremap <expr><C-k> pumvisible() ? "\<C-l>" : "\<Up>"
+inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>  pumvisible() ? neocomplete#complete_common_string() : "\<Right>"
+inoremap <expr><C-l> pumvisible() ? neocomplete#complete_common_string() : "\<Right>"
+inoremap <expr><C-g> neocomplete#undo_completion()
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> pumvisible() ? neocomplete#smart_close_popup() : "\<Left>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -209,26 +193,6 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " }}} 
-" neocomplcache {{{
-" Disable AutoComplPop.
-" let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-" let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-" let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-" let g:neocomplcache_enable_camel_case_completion = 0
-" Use underbar completion.
-" let g:neocomplcache_enable_underbar_completion = 1
-" Set minimum syntax keyword length.
-" let g:neocomplcache_min_syntax_length = 3
-" let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Define keyword.
-" if !exists('g:neocomplcache_keyword_patterns')
-"     let g:neocomplcache_keyword_patterns = {}
-" endif
-" }}}
 " neosunippet-snippets {{{
 imap ,, <Plug>(neosnippet_expand_or_jump)
 smap ,, <Plug>(neosnippet_expand_or_jump)

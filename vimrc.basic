@@ -26,7 +26,7 @@ set display=lastline
 
 " タブ/インデントの設定 {{{
 set list "タブ文字、行末など不可視文字を表示する
-set listchars=tab:»\ ,eol:↲,extends:❯,precedes:❮
+set listchars=tab:^\ ,eol:↲,extends:❯,precedes:❮
 "タブの代わりに空白文字を挿入する
 set expandtab
 "タブは半角2文字分のスペース
