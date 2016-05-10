@@ -1,5 +1,15 @@
 # common
 snippet api
+  api('${1:API_URL_Path}', {
+    ${2:POST_data}
+  }, {
+    errorTitle: '${3:errorTitle}',
+    errorMessage: {
+      ${4:MSG_MAP}
+    }
+  }).then(() => {
+    ${0}
+  });
 snippet cookie
 snippet loading
 snippet message
@@ -20,6 +30,23 @@ snippet validator
 
 # ui
 snippet dialog
+  dialog({
+    title: ${1},
+    message: ${2},
+    buttons: [
+      {
+        className: 'cancel',
+        title: '編集を続ける',
+        action: 'dismiss'
+      },
+      {
+        className: 'primary',
+        title: '${0}',
+        action: 'ok'
+      }
+    ]
+  });
+
 snippet editableList
 snippet form
 snippet sideMenu

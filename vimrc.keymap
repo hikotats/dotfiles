@@ -113,6 +113,9 @@ vmap <C-_> <Plug>(caw:i:toggle)
 " ,is: シェルを起動
 nnoremap <silent> <Leader>is :VimShell<CR>
 
+" diff
+nnoremap <Leader>df :vertical diffsplit
+
 " 翻訳
 nnoremap <silent> tr :<C-u>ExciteTranslate<CR>
 
@@ -126,12 +129,6 @@ nnoremap <Leader>sc :set filetype=sc<CR>
 
 " memolist keymap
 " メモ関連マッピング
-nnoremap Mn :MemoNew
-nnoremap Ml :MemoList
-nnoremap Mf :MemoFiler
-nnoremap Mg :MemoGrep
-
-" シフト押したままでもマッピングが起動するように
 nnoremap MN :MemoNew
 nnoremap ML :MemoList
 nnoremap MF :MemoFiler
