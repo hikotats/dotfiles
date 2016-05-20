@@ -25,12 +25,12 @@ options word
 	});
 snippet ajaxcomplete
 options word
-  ajaxComplete(function (${1:e}, xhr, settings) {
+	ajaxComplete(function (${1:e}, xhr, settings) {
 		${0:// callback}
 	});
 snippet ajaxerror
 options word
-  ajaxError(function (${1:e}, xhr, settings, thrownError) {
+	ajaxError(function (${1:e}, xhr, settings, thrownError) {
 		${2:// error callback}
 	});
 	${0}
@@ -57,7 +57,7 @@ options word
 	});
 snippet ajaxsend
 options word
-  ajaxSend(function (${1:request, settings}) {
+	ajaxSend(function (${1:request, settings}) {
 		${2:// error callback}
 	});
 	${0}
@@ -98,7 +98,7 @@ options word
 	${0}
 snippet andself
 options word
-  andSelf()
+	andSelf()
 snippet animate
 options word
 	animate({${2:param1: value1, param2: value2}}, ${3:speed})
@@ -124,7 +124,7 @@ options word
 	});
 snippet blur
 options word
-  blur(function (${2:e}) {
+	blur(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet C
@@ -168,10 +168,10 @@ options word
 	children('${2:selector expression}')
 snippet clearq
 options word
-  clearQueue(${2:'queue name'})
+	clearQueue(${2:'queue name'})
 snippet click_jq
 options word
-  click(function (${2:e}) {
+	click(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet clone_jq
@@ -249,7 +249,7 @@ options word
 snippet Dwhen
 options word
 	$.when(${1:deferreds})
-snippet data
+snippet data_jq
 options word
 	data(${2:obj})
 snippet dataa
@@ -257,29 +257,29 @@ options word
 	$.data('${1:selector expression}', '${2:key}'${3:, 'value'})
 snippet dblclick
 options word
-  dblclick(function (${2:e}) {
+	dblclick(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet delay
 options word
-  delay('${2:slow/400/fast}'${3:, 'queue name'})
+	delay('${2:slow/400/fast}'${3:, 'queue name'})
 snippet dele
 options word
-  delegate('${2:selector expression}', '${3:event name}', function (${4:e}) {
+	delegate('${2:selector expression}', '${3:event name}', function (${4:e}) {
 		${0:// event handler}
 	});
 snippet deq
 options word
-  dequeue(${2:'queue name'})
+	dequeue(${2:'queue name'})
 snippet deqq
 options word
 	$.dequeue('${1:selector expression}'${2:, 'queue name'})
 snippet detach
 options word
-  detach('${2:selector expression}')
+	detach('${2:selector expression}')
 snippet die
 options word
-  die(${2:event}, ${3:handler})
+	die(${2:event}, ${3:handler})
 snippet each
 options word
 	each(function (index) {
@@ -293,16 +293,16 @@ options word
 	$.trim('${1:string}')
 snippet empty
 options word
-  empty()
+	empty()
 snippet end
 options word
-  end()
+	end()
 snippet eq
 options word
-  eq(${2:element index})
+	eq(${2:element index})
 snippet error_jq
 options word
-  error(function (${2:e}) {
+	error(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet eventsmap
@@ -315,34 +315,34 @@ options word
 	$.extend(${1:true, }${2:target}, ${3:obj})
 snippet fadein
 options word
-  fadeIn('${2:slow/400/fast}')
+	fadeIn('${2:slow/400/fast}')
 snippet fadeinc
 options word
-  fadeIn('slow/400/fast', function () {
+	fadeIn('slow/400/fast', function () {
 		${0:// callback};
 	});
 snippet fadeout
 options word
-  fadeOut('${2:slow/400/fast}')
+	fadeOut('${2:slow/400/fast}')
 snippet fadeoutc
 options word
-  fadeOut('slow/400/fast', function () {
+	fadeOut('slow/400/fast', function () {
 		${0:// callback};
 	});
 snippet fadeto
 options word
-  fadeTo('${2:slow/400/fast}', ${3:0.5})
+	fadeTo('${2:slow/400/fast}', ${3:0.5})
 snippet fadetoc
 options word
-  fadeTo('slow/400/fast', ${2:0.5}, function () {
+	fadeTo('slow/400/fast', ${2:0.5}, function () {
 		${0:// callback};
 	});
 snippet filter_jq
 options word
-  filter('${2:selector expression}')
+	filter('${2:selector expression}')
 snippet filtert
 options word
-  filter(function (${2:index}) {
+	filter(function (${2:index}) {
 		${3}
 	})
 snippet find_jq
@@ -350,22 +350,22 @@ options word
 	find('${2:selector expression}')
 snippet focus
 options word
-  focus(function (${2:e}) {
+	focus(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet focusin
 options word
-  focusIn(function (${2:e}) {
+	focusIn(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet focusout
 options word
-  focusOut(function (${2:e}) {
+	focusOut(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet get_jq
 options word
-  get(${2:element index})
+	get(${2:element index})
 snippet getjson
 options word
 	$.getJSON('${1:mydomain.com/url}',
@@ -386,43 +386,43 @@ options word
 	}${0:, true});
 snippet hasc
 options word
-  hasClass('${2:className}')
+	hasClass('${2:className}')
 snippet hasd
 options word
 	$.hasData('${0:selector expression}');
 snippet height_jq
 options word
-  height(${2:integer})
+	height(${2:integer})
 snippet hide
 options word
-  hide('${2:slow/400/fast}')
+	hide('${2:slow/400/fast}')
 snippet hidec
 options word
-  hide('${2:slow/400/fast}', function () {
+	hide('${2:slow/400/fast}', function () {
 		${0:// callback}
 	});
 snippet hover_jq
 options word
-  hover(function (${2:e}) {
+	hover(function (${2:e}) {
 		${3:// event handler}
 	}, function ($2) {
 		${4:// event handler}
 	});
 snippet html
 options word
-  html('${2:Some text <b>and bold!</b>}')
+	html('${2:Some text <b>and bold!</b>}')
 snippet inarr
 options word
 	$.inArray(${1:value}, ${0:array});
 snippet insa
 options word
-  insertAfter('${2:selector expression}')
+	insertAfter('${2:selector expression}')
 snippet insb
 options word
-  insertBefore('${2:selector expression}')
+	insertBefore('${2:selector expression}')
 snippet is
 options word
-  is('${2:selector expression}')
+	is('${2:selector expression}')
 snippet isarr_jq
 options word
 	$.isArray(${1:obj})
@@ -449,35 +449,35 @@ options word
 	$('${1:selector}')
 snippet kdown
 options word
-  keydown(function (${2:e}) {
+	keydown(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet kpress
 options word
-  keypress(function (${2:e}) {
+	keypress(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet kup
 options word
-  keyup(function (${2:e}) {
+	keyup(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet last
 options word
-  last('${1:selector expression}')
+	last('${1:selector expression}')
 snippet live
 options word
-  live('${2:events}', function (${3:e}) {
+	live('${2:events}', function (${3:e}) {
 		${0:// event handler}
 	});
 snippet load
 options word
-  load(function (${2:e}) {
+	load(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet loadf
 options word
-  load('${2:mydomain.com/url}',
+	load('${2:mydomain.com/url}',
 		${2:{ param1: value1 },}
 		function (responseText, textStatus, xhr) {
 			${0:// success callback}
@@ -488,7 +488,7 @@ options word
 	$.makeArray(${0:obj});
 snippet map_jq
 options word
-  map(function (${2:index}, ${3:element}) {
+	map(function (${2:index}, ${3:element}) {
 		${0:// callback}
 	});
 snippet mapp
@@ -501,88 +501,88 @@ options word
 	$.merge(${1:target}, ${0:original});
 snippet mdown
 options word
-  mousedown(function (${2:e}) {
+	mousedown(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet menter
 options word
-  mouseenter(function (${2:e}) {
+	mouseenter(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet mleave
 options word
-  mouseleave(function (${2:e}) {
+	mouseleave(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet mmove
 options word
-  mousemove(function (${2:e}) {
+	mousemove(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet mout
 options word
-  mouseout(function (${2:e}) {
+	mouseout(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet mover
 options word
-  mouseover(function (${2:e}) {
+	mouseover(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet mup
 options word
-  mouseup(function (${2:e}) {
+	mouseup(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet next_jq
 options word
-  next('${2:selector expression}')
+	next('${2:selector expression}')
 snippet nexta
 options word
-  nextAll('${2:selector expression}')
+	nextAll('${2:selector expression}')
 snippet nextu
 options word
-  nextUntil('${2:selector expression}'${3:, 'filter expression'})
+	nextUntil('${2:selector expression}'${3:, 'filter expression'})
 snippet not
 options word
-  not('${2:selector expression}')
+	not('${2:selector expression}')
 snippet off
 options word
-  off('${2:events}', '${3:selector expression}'${4:, handler})
+	off('${2:events}', '${3:selector expression}'${4:, handler})
 snippet offset
 options word
-  offset()
+	offset()
 snippet offsetp
 options word
-  offsetParent()
+	offsetParent()
 snippet on_jq
 options word
-  on('${2:events}', '${3:selector expression}', function (${4:e}) {
+	on('${2:events}', '${3:selector expression}', function (${4:e}) {
 		${0:// event handler}
 	});
 snippet one_jq
 options word
-  one('${2:event name}', function (${3:e}) {
+	one('${2:event name}', function (${3:e}) {
 		${0:// event handler}
 	});
 snippet outerh
 options word
-  outerHeight()
+	outerHeight()
 snippet outerw
 options word
-  outerWidth()
+	outerWidth()
 snippet param
 options word
 	$.param(${1:obj})
 snippet parent
 options word
-  parent('${2:selector expression}')
+	parent('${2:selector expression}')
 snippet parents
 options word
-  parents('${2:selector expression}')
+	parents('${2:selector expression}')
 snippet parentsu
 options word
-  parentsUntil('${2:selector expression}'${3:, 'filter expression'})
+	parentsUntil('${2:selector expression}'${3:, 'filter expression'})
 snippet parsejson
 options word
 	$.parseJSON(${1:data})
@@ -591,37 +591,37 @@ options word
 	$.parseXML(${1:data})
 snippet pos
 options word
-  position()
+	position()
 snippet prepend
 options word
-  prepend('${2:Some text <b>and bold!</b>}')
+	prepend('${2:Some text <b>and bold!</b>}')
 snippet prependto
 options word
-  prependTo('${2:selector expression}')
+	prependTo('${2:selector expression}')
 snippet prev
 options word
-  prev('${2:selector expression}')
+	prev('${2:selector expression}')
 snippet preva
 options word
-  prevAll('${2:selector expression}')
+	prevAll('${2:selector expression}')
 snippet prevu
 options word
-  prevUntil('${2:selector expression}'${3:, 'filter expression'})
+	prevUntil('${2:selector expression}'${3:, 'filter expression'})
 snippet promise
 options word
-  promise(${2:'fx'}, ${3:target})
+	promise(${2:'fx'}, ${3:target})
 snippet prop_jq
 options word
-  prop('${2:property name}')
+	prop('${2:property name}')
 snippet proxy
 options word
 	$.proxy(${1:function}, ${2:this})
 snippet pushstack
 options word
-  pushStack(${2:elements})
+	pushStack(${2:elements})
 snippet queue
 options word
-  queue(${2:name}${3:, newQueue})
+	queue(${2:name}${3:, newQueue})
 snippet queuee
 options word
 	$.queue(${1:element}${2:, name}${3:, newQueue})
@@ -632,107 +632,107 @@ options word
 	});
 snippet rem
 options word
-  remove()
+	remove()
 snippet rema
 options word
-  removeAttr('${2:attribute name}')
+	removeAttr('${2:attribute name}')
 snippet remc
 options word
-  removeClass('${2:class name}')
+	removeClass('${2:class name}')
 snippet remd
 options word
-  removeData('${2:key name}')
+	removeData('${2:key name}')
 snippet remdd
 options word
 	$.removeData(${1:element}${2:, 'key name}')
 snippet remp
 options word
-  removeProp('${2:property name}')
+	removeProp('${2:property name}')
 snippet repa
 options word
-  replaceAll(${2:target})
+	replaceAll(${2:target})
 snippet repw
 options word
-  replaceWith(${2:content})
+	replaceWith(${2:content})
 snippet reset
 options word
-  reset(function (${2:e}) {
+	reset(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet resize
 options word
-  resize(function (${2:e}) {
+	resize(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet scroll
 options word
-  scroll(function (${2:e}) {
+	scroll(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet scrolll
 options word
-  scrollLeft(${2:value})
+	scrollLeft(${2:value})
 snippet scrollt
 options word
-  scrollTop(${2:value})
+	scrollTop(${2:value})
 snippet sdown
 options word
-  slideDown('${2:slow/400/fast}')
+	slideDown('${2:slow/400/fast}')
 snippet sdownc
 options word
-  slideDown('${2:slow/400/fast}', function () {
+	slideDown('${2:slow/400/fast}', function () {
 		${0:// callback};
 	});
 snippet select
 options word
-  select(function (${2:e}) {
+	select(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet serialize
 options word
-  serialize()
+	serialize()
 snippet serializea
 options word
-  serializeArray()
+	serializeArray()
 snippet show_jq
 options word
-  show('${2:slow/400/fast}')
+	show('${2:slow/400/fast}')
 snippet showc
 options word
-  show('${2:slow/400/fast}', function () {
+	show('${2:slow/400/fast}', function () {
 		${0:// callback}
 	});
 snippet sib
 options word
-  siblings('${2:selector expression}')
+	siblings('${2:selector expression}')
 snippet size
 options word
-  size()
+	size()
 snippet slice
 options word
-  slice(${2:start}${3:, end})
+	slice(${2:start}${3:, end})
 snippet stoggle
 options word
-  slideToggle('${2:slow/400/fast}')
+	slideToggle('${2:slow/400/fast}')
 snippet stop
 options word
-  stop('${2:queue}', ${3:false}, ${4:false})
+	stop('${2:queue}', ${3:false}, ${4:false})
 snippet submit
 options word
-  submit(function (${2:e}) {
+	submit(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet sup
 options word
-  slideUp('${2:slow/400/fast}')
+	slideUp('${2:slow/400/fast}')
 snippet supc
 options word
-  slideUp('${2:slow/400/fast}', function () {
+	slideUp('${2:slow/400/fast}', function () {
 		${0:// callback};
 	});
 snippet text_jq
 options word
-  text(${2:'some text'})
+	text(${2:'some text'})
 snippet this_jq
 options word
 	$(this)
@@ -741,7 +741,7 @@ options word
 	${0:obj}.toArray()
 snippet tog
 options word
-  toggle(function (${2:e}) {
+	toggle(function (${2:e}) {
 		${3:// event handler}
 	}, function ($2) {
 		${4:// event handler}
@@ -749,16 +749,16 @@ options word
 	${0}
 snippet togclass
 options word
-  toggleClass('${2:class name}')
+	toggleClass('${2:class name}')
 snippet togsh
 options word
-  toggle('${2:slow/400/fast}')
+	toggle('${2:slow/400/fast}')
 snippet trig
 options word
-  trigger('${2:event name}')
+	trigger('${2:event name}')
 snippet trigh
 options word
-  triggerHandler('${2:event name}')
+	triggerHandler('${2:event name}')
 snippet $trim
 options word
 	$.trim(${1:str})
@@ -767,27 +767,27 @@ options word
 	$.type(${1:obj})
 snippet unbind
 options word
-  unbind('${2:event name}')
+	unbind('${2:event name}')
 snippet undele
 options word
-  undelegate(${2:selector expression}, ${3:event}, ${4:handler})
+	undelegate(${2:selector expression}, ${3:event}, ${4:handler})
 snippet uniq
 options word
 	$.unique(${1:array})
 snippet unload
 options word
-  unload(function (${2:e}) {
+	unload(function (${2:e}) {
 		${0:// event handler}
 	});
 snippet unwrap
 options word
-  unwrap()
+	unwrap()
 snippet val_jq
 options word
-  val('${2:text}')
+	val('${2:text}')
 snippet width_jq
 options word
-  width(${2:integer})
+	width(${2:integer})
 snippet wrap
 options word
-  wrap('${2:&lt;div class="extra-wrapper"&gt;&lt;/div&gt;}')
+	wrap('${2:&lt;div class="extra-wrapper"&gt;&lt;/div&gt;}')

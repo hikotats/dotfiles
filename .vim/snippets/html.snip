@@ -1,0 +1,61 @@
+snippet initialize
+	---
+	group: ${1:#:機能区分}
+	name: ${2:#:画面名}
+	title: ${3:#:タイトル名}
+	media: ${4:#:[pc, pad, sp]}
+	desc: ${5:新規 or 既存}
+	spec:
+		- name: ${6:#:画面設計書名}
+			file: ${7:#:画面設計書path}
+	api_spec:
+		- name: ${8:#:API仕様書名}
+			file: ${9:#:API仕様書path}
+	css:
+		- ${10:#:cssファイル}
+	js:
+		- ${11:#:jsファイル}
+	---
+snippet addNew
+	---
+	name: ${1:#:画面名}
+	layout: ${2:#:./index.html}
+	pattern: ${3:#:パターン名}
+	formApp: ${4:#:true}
+	location: ${5:#:パラメータ名}
+	proxy:
+		${5:#:API_name}: ${6:#:jsonPath}
+	APP:
+		${7:#:nameSpace}: ${8:#:url}
+	---
+snippet if
+	<% if (${1}) { %>
+		${0}
+	<% } %>
+snippet ife
+	<% if (${1}) { %>
+		${2}
+	<% } else { %>
+		${3}
+	<% } %>
+snippet forEach
+	<% forEach(${1}, function (${2}) { %>
+		${0}
+	<% }) %>
+snippet %%
+options word
+	<% ${1} %>
+snippet %-
+options word
+	<%- ${1} %>
+snippet %=
+options word
+	<%= ${1} %>
+snippet %var
+	<% var ${1} = require('${2}') %>${0}
+snippet a.
+	<a class="${1}" href="${2:#}" ${3:#:target="_blank"}>${0:$1}</a>
+snippet label.
+	<label class="${1}">${2}</label>
+snippet button
+	<button name="${1}" value="${2}">${3}</button>

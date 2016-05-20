@@ -1,27 +1,27 @@
 snippet rcc
-  var ${1} = React.createClass({
-    render: function () {
-      return (
-        ${2:<div />}
-    );
-    }
-  });
+	var ${1} = React.createClass({
+		render: function () {
+			return (
+				${2:<div />}
+			);
+		}
+	});
 
 snippet rcla
-  class ${1} extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    
-    render() {
-      return(
-        ${2: <div />}
-      );
-    }
-  }
+	class ${1} extends React.Component {
+		constructor(props) {
+			super(props);
+		}
+
+		render() {
+			return(
+				${2: <div />}
+			);
+		}
+	}
 
 snippet rdom
-  ReactDOM.render(
-    ${1:< Component />},
-    ${2:document.body }
-  );
+	ReactDOM.render(
+		${1:< Component />},
+		${2:document.body }
+	);

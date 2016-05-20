@@ -1,187 +1,205 @@
 snippet provisioning
-  import $ from 'jquery';
-  import filter from 'lodash/collection/filter';
-  import find from 'lodash/collection/find';
-  import reduce from 'lodash/collection/reduce';
-  import assign from 'lodash/object/assign';
-  import omit from 'lodash/object/omit';
-  import queryString from 'query-string';
+	import $ from 'jquery';
+	import filter from 'lodash/collection/filter';
+	import find from 'lodash/collection/find';
+	import reduce from 'lodash/collection/reduce';
+	import some from 'lodash/collection/some';
+	import sortBy from 'lodash/collection/sortBy';
+	import clone from 'lodash/lang/clone';
+	import escape from 'lodash/string/escape';
+	import assign from 'lodash/object/assign';
+	import omit from 'lodash/object/omit';
+	import queryString from 'query-string';
 
-  import api from '../../common/api';
-  import message from '../../common/message';
-  import View from '../../common/View';
-  import device from '../../module/device';
-  import storage from '../../module/storage';
-  import dialog from '../../ui/dialog';
-  import toast from '../../ui/toast';
-  import Window from '../../ui/Window';
+	import api from '../../common/api';
+	import message from '../../common/message';
+	import View from '../../common/View';
+	// import sc from '../../common/siteCatalyst';
+	import device from '../../module/device';
+	import storage from '../../module/storage';
+	import ua from '../../module/userAgent';
+	import EditableList from '../../ui/EditableList'
+	import dialog from '../../ui/dialog';
+	import cancelConfirmDialog from '../../ui/dialog/cancelConfirmDialog';
+	import toast from '../../ui/toast';
+	import Window from '../../ui/Window';
 
 
-  const API_CREATE = '/api/${1}/create/';
-  const API_READ = '/api/$1/read/';
-  const API_UPDATE = '/api/$1/update/';
-  const API_DELETE = '/api/$1/delete/';
+	// import {isTutorial} from '../../module/mode';
+	// import {addValidator} from '../../module/validator';
+	// import {validate} from '../../ui/form';
+
+	const API_CREATE = '/api/${1:フォルダ名}/create/';
+	const API_READ = '/api/$1/read/';
+	const API_UPDATE = '/api/$1/update/';
+	const API_DELETE = '/api/$1/delete/';
 snippet SceneCla
-  /**
-   * ${1:画面名}
-   */
-  export default class ${2:Scene} extends View {
-  
-    constructor(options) {
-      super(assign({
-        id: '${3}',
-        className: 'scene ${4}',
-        template: require('./${5}.ejs'),
-        model: {},
-        search: {
-          detail: true,
-          query: {}
-        },
+	/**
+	 * ${1:画面名}
+	 */
+	export default class ${2:Scene} extends View {
 
-        events: {
-          'click [name=${6}]': '${7}'
-        }
-      }, options));
+		constructor(options) {
+			super(assign({
+				id: '${3}',
+				className: 'scene ${4}',
+				template: require('./${5}.ejs'),
+				model: {},
+				search: {
+					detail: true,
+					query: {}
+				},
+				
+				events: {
+					'click [name=${6}]': '${7}'
+				}
+			}, options));
+			
+			this.on(${8})
 
-      this.on(${8})
+			this.load();
+		}
 
-      this.load();
-    }
-  
-    /**
-     * APIロード
-     */
-    load() {
-      ${0}
-    }
-  }
+		/**
+		 * APIロード
+		 */
+		load() {
+			${0}
+		}
+	}
 
 snippet WindowCla
-  /**
-   * ${1:Window名}
-   */
-  export default class ${2:Window} extends Window {
-  
-    constructor(${3}) {
-      super({
-        id: '${4}',
-        title: '${5}',
-        model: {${6}},
-        template: require('./${7}.ejs'),
-        navRight: {name: 'edit', title: '変更する'},
-        buttons: [
-          {name: 'delete', title: '削除する', className: 'pull-left'},
-        ]
+	/**
+	 * ${1:Window名}
+	 */
+	export default class ${2:Window} extends Window {
 
-        events: {
-          'click [name=${8}]': '${9}'
-        }
-      });
+		constructor(${3}) {
+			super({
+				id: '${4}',
+				title: '${5}',
+				model: {${6}},
+				template: require('./${7}.ejs'),
+				navRight: {name: 'edit', title: '変更する'},
+				buttons: [
+					{name: 'delete', title: '削除する', className: 'pull-left'},
+				]
+				
+				events: {
+					'click [name=${8}]': '${9}'
+				}
+			});
 
-    }${0}
-  }
-  
+		}${0}
+	}
 
 # common
 snippet api
-  api(${1:API_URL_PATH}, {
-    storeId: APP.storeId,
-    ${2:POST_data}
-  }, {
-    indicator: ${3},
-    errorTitle: '${4:errorTitle}',
-    errorMessage: ${5},
-    showErrorDialog: ${6}
-  }).done(data => {
-    ${0}
-  });
+	api(${1:API_URL_PATH}, {
+		storeId: APP.storeId,
+		${2:POST_data}
+	}, {
+		indicator: ${3},
+		errorTitle: '${4:errorTitle}',
+		errorMessage: ${5},
+		showErrorDialog: ${6}
+	}).done(${0});
 snippet cookie
-  cookie.remove('${1}')
+	cookie.remove('${1}')
 
 snippet loading
-  loading.${1:show|hide}();
+	loading.${1:show|hide}();
 
 # module
 snippet number
 snippet checkbox
 snippet dataFormat
 snippet device
-  device.isApp()
+	device.isApp()
 snippet mode
 snippet regExpSjis
 snippet storage
-  storage.set('${1}', {
-    ${0}
-  })
+	storage.set('${1}', {
+		${0}
+	})
 snippet time
 snippet timeFormat
 snippet userAgent
-snippet validator
+snippet validate
+	validate(${0})
 
 # ui
 snippet dialog
-  dialog({
-    confirm: ${1:true},
-    title: ${2},
-    message: ${3},
-    model: ${4:site}
-    buttons: [
-      {
-        className: 'cancel',
-        title: '編集を続ける',
-        action: 'dismiss'
-      },
-      {
-        className: 'primary',
-        title: '${5}',
-        action: 'ok'
-      }
-    ],
-    autoClose: ${6:false}
-  })${0}
+	dialog({
+		id: '${1}',
+		confirm: ${2},
+		title: '${3}',
+		message: '${4}',
+		model: {${5}},
+		buttons: [
+			{
+				className: 'cancel',
+				title: '編集を続ける',
+				action: 'dismiss'
+			},
+			{
+				className: 'primary',
+				title: '${6}',
+				action: 'ok'
+			}
+		],
+		autoClose: ${7:false}
+	})${0}
 snippet editableList
+	new EditableList({
+		id: '${1}',
+		el: '${2}',
+		itemTemplate: require('${3}.ejs'),
+		type: ${4}
+	})
+	.on(${0})
+
 snippet form
-snippet sideMenu
 snippet Table
 snippet Window
-  Window({
-    id: ${1},
-    title: ${2},
-    size: ${3:device.isAPP() ? 'full' : ''},
-    template: ${4:require('./foo.ejs')},
-    imgfile: ${5:'bar.png'},
-    buttons: '',
-  }).on('close', () => location.replace(${6:path})).show();
+	Window({
+		id: ${1},
+		title: ${2},
+		size: ${3:device.isAPP() ? 'full' : ''},
+		template: ${4:require('./foo.ejs')},
+		imgfile: ${5:'bar.png'},
+		buttons: '',
+	}).on('close', () => location.replace(${6:path})).show();
 snippet dateField
 snippet help
 snippet link
 snippet placeholder
 snippet select
 snippet toast
-  toast('${1:メッセージ}')
+	toast('${1:メッセージ}')
 snippet toggle
 
 snippet elfind
-  this.$el.find('${1}')
+	this.$el.find('${1}')
 snippet View
-  /**
-   * ${1}
-   */
-  class ${2} extends View {
+	/**
+	 * ${1}
+	 */
+	class ${2} extends View {
 
-    constructor(${3}) {
-      super(assign({
-        id: ${4}
-        el: '${5}',
-        className: ${6}
-        title: '${7}',
-        template: require('./${8}.ejs'),
-        model: ${9}
-        events: {
-          'click [name=${10}]': '${11}'
-        }
-      }, options));
-    }
-  ${0}
-  }
+		constructor(${3}) {
+			super(assign({
+				id: '${4}',
+				el: '${5}',
+				className: '${6}',
+				title: '${7}',
+				template: require('./${8}.ejs'),
+				model: {${9}},
+				events: {
+					'click [name=${10}]': '${11}'
+				}
+			}, options));
+		}
+	${0}
+	}
 

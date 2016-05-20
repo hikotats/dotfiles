@@ -1,0 +1,25 @@
+snippet ifhave
+	<?php if(have_post()) : ?>
+		<?php while (have_post()) : the_post(); ?>
+			${0}
+		<?php endwhile; ?>
+	<?php endif; ?>
+
+snippet custom
+	//カスタム投稿タイプの追加
+	add_action( 'init', 'create_post_type' );
+	function create_post_type() {
+		register_post_type(
+			'custom1',
+			array(
+				'labels' => array(
+					'name' => __( '${1:カスタム投稿タイプ１}' ),
+					'singular_name' => __( '$1' )
+				),
+				'public' => true,
+				'menu_position' =>5,
+			)
+		);
+	}
+
+
