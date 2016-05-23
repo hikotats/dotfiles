@@ -94,7 +94,7 @@ snippet WindowCla
 	}
 
 # common
-snippet api
+snippet apierr
 	api(${1:API_URL_PATH}, {
 		storeId: APP.storeId,
 		${2:POST_data}
@@ -104,6 +104,9 @@ snippet api
 		errorMessage: ${5},
 		showErrorDialog: ${6}
 	}).done(${0});
+
+snippet api
+	api(${1:API_URL_PATH}, {storeId: APP.storeId}).done(${0});
 snippet cookie
 	cookie.remove('${1}')
 
@@ -178,14 +181,13 @@ snippet select
 snippet toast
 	toast('${1:メッセージ}')
 snippet toggle
-
-snippet elfind
+snippet ef
 	this.$el.find('${1}')
 snippet View
 	/**
 	 * ${1}
 	 */
-	class ${2} extends View {
+	export default class ${2} extends View {
 
 		constructor(${3}) {
 			super(assign({
@@ -202,4 +204,5 @@ snippet View
 		}
 	${0}
 	}
-
+snippet la
+	location.assign(${1});

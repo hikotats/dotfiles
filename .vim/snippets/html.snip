@@ -15,6 +15,8 @@ snippet initialize
 		- ${10:#:cssファイル}
 	js:
 		- ${11:#:jsファイル}
+	APP:
+		${0}
 	---
 snippet addNew
 	---
@@ -53,8 +55,12 @@ options word
 	<%= ${1} %>
 snippet %var
 	<% var ${1} = require('${2}') %>${0}
+snippet a
+options word
+	<a href="${1}">${0}</a>
 snippet a.
-	<a class="${1}" href="${2:#}" ${3:#:target="_blank"}>${0:$1}</a>
+options word
+	<a class="${1}" href="${2:#}" ${3:target="_blank"}>${0}</a>
 snippet label.
 	<label class="${1}">${2}</label>
 snippet button
