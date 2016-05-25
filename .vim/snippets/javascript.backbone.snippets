@@ -40,50 +40,6 @@ snippet BBC
 	module.exports = Backbone.Collection.extend({
 		model: ${0}
 	});
-# each
-snippet .each
-options word
-	.each(function (${1:#:item}, ${2:#:index}) {
-		${0}
-	});
-# find
-snippet .find
-options word
-	.find(function (${1:#:item}) {
-		return ${2:#:item}.get(${3}) === ${0};
-	});
-# filter
-snippet .filter
-options word
-	.filter(function (${1:#:item}) {
-		return ${2:#:item}.get(${3}) === ${0};
-	});
-# where
-snippet .where
-options word
-	.where({${1}: ${0}})
-# max
-snippet .max
-options word
-	.max(function (${1:#:item}) {
-		return ${2}.get(${3});
-	});
-# map
-snippet .map
-options word
-	.map(function (${1:#:item}) {
-		return ${2:#:item}.get(${0});
-	});
-# reduce
-snippet .reduce
-options word
-	.reduce(function (${1:#:memo}, ${2:#:item}) {
-		return ${3:#:memo} + ${4:#:item}.get(${5});
-	}, ${0});
-# pluck
-snippet .pluck
-options word
-	.pluck(${0})
 # Backbone.View
 snippet BBV
 	module.exports = Backbone.View.extend({

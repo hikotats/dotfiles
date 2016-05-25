@@ -1,0 +1,49 @@
+# each
+snippet forEach
+options word
+abbr lodash/collection/forEach
+	each((${1:#:item}, ${2:#:index}) => {
+		${0}
+	});
+# find
+snippet find
+options word
+abbr lodash/collection/find
+	find((${1:#:item}) => {
+		return ${2:#:item}.get(${3}) === ${0};
+	});
+# filter
+snippet filter
+options word
+abbr lodash/collection/filter
+	filter((${1:#:item}) => {
+		return ${2:#:item}.get(${3}) === ${0};
+	});
+# where
+snippet where
+options word
+	where({${1}: ${0}})
+# max
+snippet max
+options word
+	max((${1:#:item}) => {
+		return ${2}.get(${3});
+	});
+# map
+snippet map
+options word
+abbr lodash/collection/map
+	map((${1:#:item}) => {
+		return ${2:#:item}.get(${0});
+	});
+# reduce
+snippet reduce
+options word
+abbr lodash/collection/reduce
+	reduce((${1:#:memo}, ${2:#:item}) => {
+		return ${3:#:memo} + ${4:#:item}.get(${5});
+	}, ${0});
+# pluck
+snippet pluck
+options word
+	pluck(${0})

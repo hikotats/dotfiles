@@ -1,5 +1,6 @@
 snippet provisioning
 	import $ from 'jquery';
+	import assign from 'lodash/object/assign';
 	import filter from 'lodash/collection/filter';
 	import find from 'lodash/collection/find';
 	import reduce from 'lodash/collection/reduce';
@@ -7,9 +8,12 @@ snippet provisioning
 	import sortBy from 'lodash/collection/sortBy';
 	import clone from 'lodash/lang/clone';
 	import escape from 'lodash/string/escape';
-	import assign from 'lodash/object/assign';
 	import omit from 'lodash/object/omit';
 	import queryString from 'query-string';
+	import pick from 'lodash/object/pick';
+	import find from 'lodash/collection/find';
+	import map from 'lodash/collection/map';
+	import throttle from 'lodash/function/throttle';
 
 	import api from '../../common/api';
 	import message from '../../common/message';
@@ -24,50 +28,84 @@ snippet provisioning
 	import toast from '../../ui/toast';
 	import Window from '../../ui/Window';
 
-
-	// import {isTutorial} from '../../module/mode';
-	// import {addValidator} from '../../module/validator';
-	// import {validate} from '../../ui/form';
-
 	const API_CREATE = '/api/${1:フォルダ名}/create/';
 	const API_READ = '/api/$1/read/';
 	const API_UPDATE = '/api/$1/update/';
 	const API_DELETE = '/api/$1/delete/';
+snippet im+
+	import ${1} form '${2}';
+	im+${0}
+snippet View
+	/**
+	 * ${1:画面名}
+	 */
+	export default class ${2} extends View {
+
+		constructor(${3}) {
+			super(assign({
+				${4}
+			}, $3));
+		}
+
+		m_load${0}
+	}
 snippet SceneCla
 	/**
 	 * ${1:画面名}
 	 */
 	export default class ${2:Scene} extends View {
 
-		constructor(options) {
+		constructor(${3}) {
 			super(assign({
-				id: '${3}',
-				className: 'scene ${4}',
-				template: require('./${5}.ejs'),
-				model: {},
-				search: {
-					detail: true,
-					query: {}
-				},
-				
-				events: {
-					'click [name=${6}]': '${7}'
-				}
-			}, options));
+				${4}
+			}, $3));
 			
-			this.on(${8})
+			this.on(${5})
 
 			this.load();
 		}
 
-		/**
-		 * APIロード
-		 */
-		load() {
-			${0}
-		}
 	}
+snippet assign
+	assign({
+		opt${0}
+	})
+snippet opt
+	id: '${1}',
+	className: '${2}',
+	el: '${3}',
+	title: '${4}'
+	template: require('./${5}.ejs'),
+	model: {${6}},
+	search: {${7}},
 
+	events: {
+		ev+${0}
+	}
+	
+snippet ev+
+	'${1:#:click} [name=${2}]': '${3}',
+	ev+${0}
+snippet m
+	/**${1}
+	${2}(${3}) {
+		${0}
+	}
+snippet m_load
+options word
+	/**
+	 * APIロード
+	 */
+	load() {
+		${0}
+	}
+snippet model
+options word
+	this.model.${0}
+
+snippet index
+options word
+	indexOf('${1}') ${0}
 snippet WindowCla
 	/**
 	 * ${1:Window名}
@@ -94,6 +132,10 @@ snippet WindowCla
 	}
 
 # common
+snippet api
+	api(${1:API_URL_PATH}, {
+		storeId: APP.storeId${2}
+	}).done(${0});
 snippet apierr
 	api(${1:API_URL_PATH}, {
 		storeId: APP.storeId,
@@ -105,8 +147,6 @@ snippet apierr
 		showErrorDialog: ${6}
 	}).done(${0});
 
-snippet api
-	api(${1:API_URL_PATH}, {storeId: APP.storeId}).done(${0});
 snippet cookie
 	cookie.remove('${1}')
 
@@ -121,7 +161,11 @@ snippet device
 	device.isApp()
 snippet mode
 snippet regExpSjis
-snippet storage
+snippet sto_get
+options word
+	storage.get('${1}')
+snippet sto_set
+options word
 	storage.set('${1}', {
 		${0}
 	})
@@ -130,29 +174,33 @@ snippet timeFormat
 snippet userAgent
 snippet validate
 	validate(${0})
-
 # ui
 snippet dialog
 	dialog({
-		id: '${1}',
-		confirm: ${2},
-		title: '${3}',
-		message: '${4}',
-		model: {${5}},
-		buttons: [
-			{
-				className: 'cancel',
-				title: '編集を続ける',
-				action: 'dismiss'
-			},
-			{
-				className: 'primary',
-				title: '${6}',
-				action: 'ok'
-			}
-		],
-		autoClose: ${7:false}
+		opt_dialog${1}
 	})${0}
+snippet opt_dialog
+options word
+	id: ${1}
+	title: '${2}',
+	message: '${3}',
+	confirm: ${4}
+	model: {${5}},
+	opt_btns${6}
+	autoClose: ${0}
+snippet opt_btns
+	buttons: [
+		{
+			className: 'cancel',
+			title: '編集を続ける',
+			action: 'dismiss'
+		},
+		{
+			className: 'primary',
+			title: '${1}',
+			action: 'ok'
+		}
+	],
 snippet editableList
 	new EditableList({
 		id: '${1}',
@@ -183,26 +231,12 @@ snippet toast
 snippet toggle
 snippet ef
 	this.$el.find('${1}')
-snippet View
-	/**
-	 * ${1}
-	 */
-	export default class ${2} extends View {
-
-		constructor(${3}) {
-			super(assign({
-				id: '${4}',
-				el: '${5}',
-				className: '${6}',
-				title: '${7}',
-				template: require('./${8}.ejs'),
-				model: {${9}},
-				events: {
-					'click [name=${10}]': '${11}'
-				}
-			}, options));
-		}
-	${0}
-	}
+snippet on
+options word
+	on('${1:event}', a${0});
 snippet la
 	location.assign(${1});
+snippet qs
+	queryString.parse(location.search)
+snippet $wt
+	$.when().then(${0})

@@ -29,15 +29,17 @@ set list "タブ文字、行末など不可視文字を表示する
 set listchars=tab:^\ ,eol:↲,extends:❯,precedes:❮
 "タブの代わりに空白文字を挿入する
 set expandtab
-"snippetファイルの場合はハードタブを使う
-au BufNewFile,BufRead *.snip set noexpandtab tabstop=4 shiftwidth=4
-au BufNewFile,BufRead *.snippets set noexpandtab tabstop=4 shiftwidth=4
 "タブは半角2文字分のスペース
 set ts=2 sw=2 sts=0
 "新しい行のインデントを現在行と同じにする
 set autoindent
 "新しい行を作ったときに高度な自動インデントを行う
 set smartindent
+au BufNewFile,BufRead *.html,*.ejs set expandtab sw=2 sts=2 ts=2
+au BufNewFile,BufRead *.coffee,*.js set expandtab sw=2 sts=2 ts=2
+"snippetファイルの場合はハードタブを使う
+au BufNewFile,BufRead *.snip set noexpandtab ts=4 sw=4
+au BufNewFile,BufRead *.snippets set noexpandtab ts=4 sw=4
 " }}}
 
 "編集中のファイル名を表示
@@ -58,11 +60,11 @@ set wildmenu wildmode=list:longest,full
 
 " シンタックス {{{
 " ejsファイルをhtmlと同じシンタックスに
-autocmd BufNewFile,BufReadPost *.ejs set filetype=html
+au BufNewFile,BufReadPost *.ejs set filetype=html
 " mdファイルをmarkdownシンタックスに
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufReadPost *.md set filetype=markdown
 " json5ファイルをjsシンタックスに
-autocmd BufNewFile,BufReadPost *.json5 set filetype=javascript
+au BufNewFile,BufReadPost *.json5 set filetype=javascript
 " }}}
 " ルーラを表示
 set ruler

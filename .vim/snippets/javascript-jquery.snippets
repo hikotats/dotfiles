@@ -160,8 +160,10 @@ options word
 snippet Crem
 options word
 	${1:callbacks}.remove(${2:callbacks})
-snippet change
+snippet change_jq
 options word
+	change(function (${2:e}) {
+		${0:// event handler}
 	});
 snippet children
 options word
@@ -659,7 +661,7 @@ options word
 	reset(function (${2:e}) {
 		${0:// event handler}
 	});
-snippet resize
+snippet resize_jq
 options word
 	resize(function (${2:e}) {
 		${0:// event handler}
