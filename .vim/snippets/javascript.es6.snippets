@@ -4,6 +4,9 @@ snippet let
 	let ${1} = ${0};
 snippet im
 	import ${1} from '${0}';
+snippet im+
+	import ${1} form '${2}';
+	im+${0}
 snippet cla
 	class ${1} {
 		${0}
@@ -25,6 +28,11 @@ options word
 	(${1}) => {
 		${0}
 	}
+snippet (af)
+options word
+	(() => {
+		${0}
+	})()
 snippet sym
 	const ${1} = Symbol('${0}');
 snippet ed

@@ -32,52 +32,14 @@ snippet addNew
 	APP:
 		${8:#:nameSpace}: ${9:#:url}
 	---
-snippet if
-	<% if (${1}) { %>
-		${0}
-	<% } %>
-snippet ife
-	<% if (${1}) { %>
-		${2}
-	<% } else { %>
-		${3}
-	<% } %>
-snippet %forEach
-	<% forEach(${1}, function (${2}) { %>
-		${0}
-	<% }) %>
-snippet %reduce
-	<% reduce(${1}, function (${2}) {
-		${0}
-	}) %>
-snippet %%
-options word
-	<% ${1} %>
-snippet %-
-options word
-	<%- ${1} %>
-snippet %=
-options word
-	<%= ${1} %>
-snippet %var
-	<% var ${1} = require('${2}') %>${0}
-snippet a
-options word
-	<a href="${1}">${0}</a>
-snippet a.
-options word
-	<a class="${1}" href="${2:#}" ${3:target="_blank"}>${0}</a>
-snippet label.
-	<label class="${1}">${2}</label>
-snippet button
-	<button name="${1}" value="${2}">${3}</button>
-snippet svg
-	<svg><path d="${1}"></path></svg>
+
+# HTML
 snippet header_k
 	<header>
 		<h1>${1}</h1>
 		<a class="close" href="<%= APP.basepath %>/view/${2}"></a>
 	</header>
+
 snippet main_k
 	<main>
 		<div class="inner container">
@@ -87,12 +49,41 @@ snippet main_k
 			</section>
 		</div>
 	</main>
+
 snippet footer_k
 	<footer>
 		<div class="container buttons">
 		${1}
 		</div>
 	</footer>
+
+snippet a
+options word
+	<a href="${1}">${0}</a>
+
+snippet a.
+options word
+	<a class="${1}" href="${2:#}" ${3:target="_blank"}>${0}</a>
+
+snippet label.
+	<label class="${1}">${2}</label>
+
+snippet input:text
+	<input
+		type="text"
+		name="${1}"
+		value="${2}"
+		data-validate="${3:#:require, invalidChar, maxLength=49}"
+		placeholder="${4: プレースホルダー}"
+
+snippet button
+	<button name="${1}" value="${2}">${3}</button>
+
+snippet svg
+	<svg><path d="${1}"></path></svg>
+
+
+# component
 snippet %radio
 	<%= radio({
 		name: ${1},
@@ -100,6 +91,7 @@ snippet %radio
 		checked: ${3},
 		disabled: ${0}
 	}) %>
+
 snippet %button
 options word
 	<%= button({
@@ -108,6 +100,7 @@ options word
 		label: '${3}',
 		disabled: ${0}
 	}) %>
+
 snippet %toggleSwitch
 	<%= toggleSwitch({
 		name: '${1}',
@@ -115,5 +108,53 @@ snippet %toggleSwitch
 		'data-false': '${3}',
 		checked: ${4},
 		disabled: ${5}
+	}) %>
+
+snippet %checkbox
+	<%= checkbox({
+		name: '${1}',
+		checked: item.selected
+	}) %>
+
+
+# utilities
+snippet if
+	<% if (${1}) { %>
+		${0}
+	<% } %>
+
+snippet ife
+	<% if (${1}) { %>
+		${2}
+	<% } else { %>
+		${3}
+	<% } %>
+
+snippet %%
+options word
+	<% ${1} %>
+
+snippet %-
+options word
+	<%- ${1} %>
+
+snippet %=
+options word
+	<%= ${1} %>
+
+snippet %var
+	<% var ${1} = require('${2}') %>${0}
+
+
+# lodash
+snippet %forEach
+options word
+	<% forEach(${1}, function (${2}) { %>
+		${0}
+	<% }) %>
+
+snippet %reduce
+	<% reduce(${1}, function (${2}) {
+		${0}
 	}) %>
 
