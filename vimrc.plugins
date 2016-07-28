@@ -230,3 +230,8 @@ let g:tlist_javascript_settings = 'javascript;c:class;m:method;f:function;p:prop
 " let s:tlist_def_javascript_settings = 'javascript;f:function;c:class;m:method;p:property'
 
 " }}}
+" vim-trailing-whitespace {{{
+highlight default ExtraWhitespace ctermbg=darkred guibg=#d33682
+" ファイル保存時に余分なスペースを削除する
+autocmd BufWritePre * :FixWhitespace
+" }}}

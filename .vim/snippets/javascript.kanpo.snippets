@@ -158,7 +158,9 @@ snippet opt
 
 # module
 # snippet number
-# snippet dataFormat
+snippet dateFormat
+options word
+	dateFormat('${1}', ${0})
 # snippet device
 # 	device.isApp()
 # snippet mode
@@ -175,7 +177,10 @@ options word
 	})
 
 # snippet time
-# snippet timeFormat
+snippet timeFormat
+options word
+	timeFormat('${1}', ${0})
+
 # snippet userAgent
 snippet validate
 	validate(${0})
