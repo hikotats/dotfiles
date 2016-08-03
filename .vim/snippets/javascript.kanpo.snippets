@@ -1,27 +1,31 @@
 snippet provisioning
-	import $ from 'jquery';
-	import assign from 'lodash/object/assign';
-	import filter from 'lodash/collection/filter';
-	import find from 'lodash/collection/find';
-	import map from 'lodash/collection/map';
-	import reduce from 'lodash/collection/reduce';
 
-	import api from '../../common/api';
-	import message from '../../common/message';
-	import View from '../../common/View';
+	import api from '../../../common/api';
+	import View from '../../../ui/View';
 	import {showWindow} from '../../../ui/Window';
-	// import sc from '../../common/siteCatalyst';
-	import device from '../../module/device';
-	import ua from '../../module/userAgent';
-	import toast from '../../ui/toast';
-	import dialog from '../../ui/dialog';
-	import cancelConfirmDialog from '../../ui/dialog/cancelConfirmDialog';
 
-	const API_${2:API名}_READ = '/api/${1:フォルダ名}/read/';
-	const API_$2_CREATE = '/api/$1/create/';
-	const API_$2_UPDATE = '/api/$1/update/';
-	const API_$2_DELETE = '/api/$1/delete/';
+	const API_CREATE = '/api/${1: フォルダ名}/create/';
+	const API_UPDATE = '/api/$1/update/';
+	const API_DELETE = '/api/$1/delete/';
 
+snippet im$
+	import $ from 'jquery';
+snippet imassign
+	import assign from 'lodash/object/assign';
+snippet imget
+	import get from 'lodash/object/get';
+snippet imset
+	import set from 'lodash/object/set';
+snippet imfilter
+	import filter from 'lodash/collection/filter';
+snippet imfind
+	import find from 'lodash/collection/find';
+snippet imforEach
+	import forEach from 'lodash/collection/forEach';
+snippet immap
+	import map from 'lodash/collection/map';
+snippet imreduce
+	import reduce from 'lodash/collection/reduce';
 
 # method
 snippet m
@@ -92,16 +96,16 @@ snippet loading
 # Model Class
 snippet Model
 	import Model from 'common/Model';
-	
+
 	/**
 	 * ${1:モデル名}
 	 */
 	export default class ${2:ModelName} extends Model {
-	  
+
 		// get idAttribute() {
 		// 	return '${3}';
 		// }
-	
+
 		get defaults() {
 			return {
 				${0}

@@ -143,9 +143,11 @@ options word
 	<%= ${1} %>
 
 snippet %var
-	<% var ${1} = require('${2}') %>${0}
-
-
+	<% var ${1} = require('${2}') %>
+snippet %varforEach
+	<% var forEach = require('lodash/collection/forEach') %>
+snippet %varreduce
+	<% var reduce = require('lodash/collection/reduce') %>
 # lodash
 snippet %forEach
 options word
