@@ -147,6 +147,19 @@ cmap <c-x> <c-r>=expand('%:p:h')<cr>/
 " expand file (not ext)
 cmap <c-z> <c-r>=expand('%:p:r')<cr>
 
+" CtrlP
+nnoremap <Leader>a :<C-u>CtrlP<Space>
+" バッファセレクタとして使えます。
+nnoremap <Leader>b :<C-u>CtrlPBuffer<CR>
+" ディレクトリを検索してカレントディレクトリを切り替えたりできます。
+nnoremap <Leader>d :<C-u>CtrlPDir<CR>
+nnoremap <Leader>f :<C-u>CtrlP<CR>
+" これまで開いたファイル履歴から絞り込みます。
+nnoremap <Leader>m :<C-u>CtrlPMRUFiles<CR>
+" 現在のファイル内の各行を対象に絞り込みます。
+nnoremap <Leader>l :<C-u>CtrlPLine<CR>
+let g:ctrlp_map = '<Nop>'
+
 " Unite keymap
 " prefix keyの設定
 nnoremap [unite] <Nop>

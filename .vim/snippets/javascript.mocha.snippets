@@ -1,0 +1,9 @@
+snippet it
+	it('${1}', () => {
+		assert+${0}
+	})
+
+snippet assert+
+	assert(${1} === ${2});
+	assert+${0}
+
