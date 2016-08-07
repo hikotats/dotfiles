@@ -235,3 +235,7 @@ highlight default ExtraWhitespace ctermbg=darkred guibg=#d33682
 " ファイル保存時に余分なスペースを削除する
 autocmd BufWritePre * :FixWhitespace
 " }}}
+" grep {{{
+" 自動的にquickfix-windowを開く
+autocmd QuickFixCmdPost *grep* cwindow
+" }}}

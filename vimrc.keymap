@@ -30,6 +30,8 @@ nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>q :q<CR>
 " 新規垂直タブ
 nnoremap <Leader>v :vnew<CR>
+" 新規平行タブ
+nnoremap <Leader>n :new<CR>
 " Enterで改行 insert
 nnoremap <CR> o
 nnoremap <S-CR> O
@@ -98,6 +100,11 @@ vnoremap [ "zdi[<C-R>z]<ESC>
 vnoremap ( "zdi(<C-R>z)<ESC>
 vnoremap " "zdi"<C-R>z"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
+
+nnoremap [q :cprevious<CR>   " 前へ
+nnoremap ]q :cnext<CR>       " 次へ
+nnoremap [Q :<C-u>cfirst<CR> " 最初へ
+nnoremap ]Q :<C-u>clast<CR>  " 最後へ
 
 inoremap <C-c> <Esc>
 vnoremap <C-p> "0p<CR>"
