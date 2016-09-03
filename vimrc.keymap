@@ -149,6 +149,10 @@ nnoremap HC :HatebloCreate
 nnoremap HD :HatebloCreateDraft
 nnoremap HB :execute "OpenBrowser ".hatebloUrl
 
+nnoremap CP :CopyPath
+nnoremap CFP :CopyFullPath
+nnoremap CF :CopyFileName
+
 " expand path
 cmap <c-x> <c-r>=expand('%:p:h')<cr>/
 " expand file (not ext)

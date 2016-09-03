@@ -195,7 +195,7 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " neocomplete-php confing
 let g:neocomplete_php_locale = 'ja'
-" }}} 
+" }}}
 " neosunippet-snippets {{{
 imap ,, <Plug>(neosnippet_expand_or_jump)
 smap ,, <Plug>(neosnippet_expand_or_jump)
@@ -208,7 +208,7 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
- 
+
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
@@ -238,4 +238,22 @@ autocmd BufWritePre * :FixWhitespace
 " grep {{{
 " 自動的にquickfix-windowを開く
 autocmd QuickFixCmdPost *grep* cwindow
+" }}}
+" copyPath {{{
+function! CopyPath()
+  let @*=expand('%:P')
+endfunction
+
+function! CopyFullPath()
+  let @*=expand('%:p')
+endfunction
+
+function! CopyFileName()
+  let @*=expand('%:t')
+endfunction
+
+command! CopyPath     call CopyPath()
+command! CopyFullPath call CopyFullPath()
+command! CopyFileName call CopyFileName()
+
 " }}}

@@ -11,7 +11,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'bling/vim-airline'                " airline
 NeoBundle 'Shougo/unite.vim'                 " unite
 NeoBundle 'ujihisa/unite-colorscheme'        " unite-colorscheme
-NeoBundle 'Shougo/vimproc'                   " vimproc
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'mac' : 'make'
+\    },
+\ }
 NeoBundle 'Shougo/neomru.vim'                " neomru
 NeoBundle 'Shougo/neocomplete.vim'           " neocomplete
 NeoBundle 'violetyk/neocomplete-php.vim'     " neocomplete-php
