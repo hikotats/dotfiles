@@ -6,7 +6,7 @@
 # alias自身をひらく
 alias za="vi ~/dotfiles/zshrc.alias"
 alias zb="vi ~/dotfiles/zshrc.basic"
-# source 
+# source
 alias az="vi ~/.zshrc"
 alias sz="source ~/.zshrc"
 
@@ -32,11 +32,13 @@ alias wunderadd="wunderline"
 alias ws="open -a Webstorm"
 # ctags
 # alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-# Vim 
+# Vim
 alias vim="open -a MacVim.app"
 alias vi=/Applications/MacVim.app/Contents/MacOS/Vim
 # vimdiff
 alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
 # view
 alias view=/Applications/MacVim.app/Contents/MacOS/view
-
+# java
+alias javac = javac -J-Dfile.encoding=UTF8
+alias java  = javac -Dfile.encoding=UTF8

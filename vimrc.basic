@@ -73,7 +73,8 @@ set ruler
 " syntax on
 syntax enable
 set background=dark
-colorscheme solarized
+" colorscheme solarized
+colorscheme hybrid
 
 if !has('gui_running')
 colorscheme molokai
@@ -84,10 +85,10 @@ endif
 hi Normal ctermbg=none
 
 " vimdiff
-hi DiffAdd    ctermfg=black ctermbg=2  
-hi DiffChange ctermfg=black ctermbg=3  
-hi DiffDelete ctermfg=black ctermbg=6  
-hi DiffText   ctermfg=black ctermbg=7 
+hi DiffAdd    ctermfg=black ctermbg=2
+hi DiffChange ctermfg=black ctermbg=3
+hi DiffDelete ctermfg=black ctermbg=6
+hi DiffText   ctermfg=black ctermbg=7
 " }}}
 filetype on
 filetype plugin on
