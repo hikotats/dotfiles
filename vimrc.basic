@@ -1,102 +1,79 @@
-"行番号表示
 set number
-set cursorline
-set cursorcolumn
-set laststatus=2
-set showmatch "閉じ括弧が入力されたとき、対応する括弧を表示する
-set helpheight=999
-
-set backspace=indent,eol,start " インサートモード時にバックスペースを使う
-set hlsearch
-set ignorecase
-set splitright
-
-" 内部の文字コード（ブランクバッファの文字コードに影響）
-set enc=utf-8
-" デフォルトのファイル文字コード
-set fenc=utf-8
-" 対応する文字コード
-set fencs=utf-8,iso-2022-jp,euc-jp,cp932
-set langmenu=ja_JP.utf-8
-" set guifontset=a18,r18,k18
-set guifont=Ricty\ Regular\ for\ Powerline:h18
-
-set display=lastline
-"https://github.com/leader22/dotfiles/blob/master/.vimrc
-
-" タブ/インデントの設定 {{{
-set list "タブ文字、行末など不可視文字を表示する
-set listchars=tab:^\ ,eol:↲,extends:❯,precedes:❮
-"タブの代わりに空白文字を挿入する
-set expandtab
-"タブは半角2文字分のスペース
-set ts=2 sw=2 sts=0
-"新しい行のインデントを現在行と同じにする
-set autoindent
-"新しい行を作ったときに高度な自動インデントを行う
-set smartindent
-au BufNewFile,BufRead *.html,*.ejs set expandtab sw=2 sts=2 ts=2
-au BufNewFile,BufRead *.coffee,*.js set expandtab sw=2 sts=2 ts=2
-"snippetファイルの場合はハードタブを使う
-au BufNewFile,BufRead *.snip set noexpandtab ts=4 sw=4
-au BufNewFile,BufRead *.snippets set noexpandtab ts=4 sw=4
-" }}}
-
-"編集中のファイル名を表示
 set title
-set helplang=ja,en
-set noswapfile " ファイル編集中にスワップファイルを作らない
-
-set foldmethod=marker
-" OSのクリップボードをレジスタ指定無しで Yank, Put 出来るようにする
-set clipboard=unnamed,unnamedplus
-set mouse=a
-set ttymouse=xterm2
-set shellslash " Windows でもパスの区切り文字を / にする
-set iminsert=2 " インサートモードから抜けると自動的にIMEをオフにする
-set visualbell t_vb= "ビープ音すべてを無効にする
-set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
-set wildmenu wildmode=list:longest,full
-
-" シンタックス {{{
-" ejsファイルをhtmlと同じシンタックスに
-au BufNewFile,BufReadPost *.ejs set filetype=html
-" mdファイルをmarkdownシンタックスに
-au BufNewFile,BufReadPost *.md set filetype=markdown
-" json5ファイルをjsシンタックスに
-au BufNewFile,BufReadPost *.json5 set filetype=javascript
-" }}}
-" ルーラを表示
+set ambiwidth=double
+" set cursorline
+" set cursorcolumn
 set ruler
-
-" カラー設定 {{{
-" syntax on
-syntax enable
-set background=dark
-" colorscheme solarized
-colorscheme hybrid
-
-if !has('gui_running')
-colorscheme molokai
-set t_Co=256
+set expandtab
+set ts=2 sw=2 sts=0 " tabstop shiftwidth softtabstop
+set smartindent
+set list
+set listchars=tab:^\ ,eol:↲,extends:❯,precedes:❮
+set showcmd " Show (partial) command in status line.
+set showmatch " Show matching brackets.
+set ignorecase " Do case insensitive matching
+set helpheight=999
+set hlsearch
+set whichwrap=b,s,h,l,<,>,[,],~ " add
+set hidden " Hide buffers when they are abandoned
+set history=50
+set cindent " add
+set noswapfile
+set enc=utf-8
+set fenc=utf-8
+set fencs=utf-8,iso-2022-jp,euc-jp,cp932
+" set fileencodings=utf-8,euc-jp,ucs-bom,iso-2022-jp,sjis,cp932,latin1 " add
+set langmenu=ja_JP.utf-8
+set wrap " add
+if has('nvim')
+  set clipboard+=unnamedplus
+  if has('mouse')
+    set mouse=
+  endif
+else
+  set laststatus=2
+  set wildmenu
+  set wildmode=list:longest,full
+  set clipboard=unnamed,autoselect
+  set mouse=a " Enamble mouse usage (all modes)
+  set backspace=indent,eol,start
 endif
 
-" iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
-hi Normal ctermbg=none
+set splitright
+set guifont=a18,r18,k18
+set guifont=Ricty\ Regular\ for\ Powerline:h18
+" Guifont! Consolas:h9
+set display=lastline
+"https://github.com/leader22/dotfiles/blob/master/.vimrc
+set autoindent
+set helplang=ja,en
+set foldmethod=marker
+" set ttymouse=xterm2 Unknown option ttyomouse
+set shellslash
+" set iminsert=2 Invalid argument
+set visualbell t_vb= "ビープ音すべてを無効にする
+set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
 
-" vimdiff
-hi DiffAdd    ctermfg=black ctermbg=2
-hi DiffChange ctermfg=black ctermbg=3
-hi DiffDelete ctermfg=black ctermbg=6
-hi DiffText   ctermfg=black ctermbg=7
-" }}}
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+syntax enable
+colorscheme onedark
+
 filetype on
 filetype plugin on
 filetype indent on
-
-"# iTerm2のタブ名を変更する
-"function Title {
-"  echo -ne \033]0;"$*"\007"
-"}
-
+"
+"  for Lang
+"
+" au BufNewFile,BufRead *.html,*.ejs set expandtab sw=2 sts=2 ts=2
+" au BufNewFile,BufRead *.coffee,*.js set expandtab sw=2 sts=2 ts=2
+au BufNewFile,BufRead *.snip set noexpandtab ts=4 sw=4
+au BufNewFile,BufRead *.snippets set noexpandtab ts=4 sw=4
+au BufNewFile,BufReadPost *.ejs set filetype=html
+au BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufReadPost *.json5 set filetype=javascript
 set path+=~/.cabal/bin/pandoc

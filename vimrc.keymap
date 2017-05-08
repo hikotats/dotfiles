@@ -20,7 +20,8 @@ nnoremap <Leader>vs :execute "vnew ~/.vim/bundle/vim-snippets/snippets/"<CR>
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-nnoremap Q :<C-u>help 
+nnoremap Q :<C-u>help
+map q <Nop>
 
 " ファイルを保存する
 nnoremap <Leader>w :w<CR>
@@ -65,7 +66,7 @@ nnoremap : ;
 nnoremap Y y$
 
 " インクリメント
-nnoremap + <C-a><Left> 
+nnoremap + <C-a><Left>
 " デクリメント
 nnoremap - <C-x><Left>
 
@@ -89,7 +90,7 @@ inoremap <C-Left>    <Esc>:tabprevious<CR>i
 inoremap <C-Right>    <Esc>:tabnext<CR>i
 inoremap <C-t> <Esc>:tabnew<CR>noremap <silent> <C-_><Tab> gt
 
-" 引用符, 括弧の設定 
+" 引用符, 括弧の設定
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap ( ()<Left>
@@ -108,7 +109,7 @@ nnoremap ]Q :<C-u>clast<CR>  " 最後へ
 
 inoremap <C-c> <Esc>
 vnoremap <C-p> "0p<CR>"
-" NERDTreeToggle 
+" NERDTreeToggle
 nnoremap <silent><Leader>e :NERDTreeToggle<CR>
 " \lでtaglistウインドウを開いたり閉じたり出来るショートカット"
 nmap  <Leader>l :TagbarToggle<CR>
@@ -196,8 +197,8 @@ nnoremap <silent> [unite]o :<C-u>Unite<Space>outline<CR>
 " file_rec:!
 nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
 " unite.vimを開いている間のキーマッピング
-autocmd FileType unite call s:unite_my_settings() 
-  function! s:unite_my_settings()   
+autocmd FileType unite call s:unite_my_settings()
+  function! s:unite_my_settings()
   " ESCでuniteを終了
   nmap <buffer> <ESC> <Plug>(unite_exit)
 endfunction

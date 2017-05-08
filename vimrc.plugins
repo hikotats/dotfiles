@@ -22,53 +22,28 @@ let g:syntastic_mode_map = {
 " vim-quickrun {{{
 " runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
 " updatetime が一時的に書き換えられてしまうので注意して下さい
-let g:quickrun_config = {
-\ '_': {
-\   'hook/close_buffer/enable_empty_data': 1,
-\   'hook/close_buffer/enable_failure': 1,
-\   'outputter': 'multi:buffer:quickfix',
-\   'outputter/buffer/close_on_empty': 1,
-\   'outputter/buffer/split': ':botright',
-\   'runner': 'vimproc',
-\   'runner/vimproc/updatetime' : 60
-\ },
-\ 'markdown': {
-\   'outputter' : 'browser',
-\   'command': 'pandoc',
-\   'cmdopt': '-s --template=github --css=github.css --from=markdown --to=html',
-\   'exec': '%c %o %s %a'
-\ },
-\ 'java': {
-\   'exec' : ['javac -J-Dfile.encoding=UTF8 %o %s', '%c -Dfile.encoding=UTF8 %s:t:r %a']
-\ },
-\ 'javascript/watchdogs_checker': {
-\   'type': 'watchdogs_checker/javascript'
-\ },
-\ 'coffee': {
-\   'command': 'coffee',
-\   'cmdopt': '-pb'
-\ },
-\ 'babel': {
-\  'cmdopt': '--stage 1',
-\  'exec': 'babal %o %s | node'
-\ },
-\ 'watchdogs_checker/_': {
-\   'hook/copen/enable_exist_data' : 1,
-\   'hook/qfstatusline_update/enable_exit': 1,
-\   'hook/qfstatusline_update/priority_exit': 4
-\ },
-\ 'watchdogs_checker/javascript': {
-\   'command': 'eslint',
-\   'cmdopt': '--cache --cache-location '. $HOME .'/.cache/eslint/.eslintcache --format compact --max-warnings 1 --no-color --no-ignore --quiet --config '. $HOME .'/.eslintrc.js  --fix',
-\   'errorformat': '%E%f: line %l\, col %c\, Error - %m,%W%f: line %l\, col %c\, Warning - %m,%-G%.%#',
-\   'exec': '%c %o %s:p'
-\  },
-\  '*': {
-\    'split': ''
-\  }
-\}
-call watchdogs#setup(g:quickrun_config);
-
+let g:quickrun_config = {}
+let g:quickrun_config._ = {
+      \   'runner' : 'vimproc',
+      \   'runner/vimproc/updatetime' : 60
+      \ }
+let g:quickrun_config['markdown'] = {
+      \  'outputter' : 'browser',
+      \  'command': 'pandoc',
+      \  'cmdopt': '-s --template=github --css=github.css --from=markdown --to=html',
+      \  'exec': '%c %o %s %a'
+      \ }
+let g:quickrun_config['coffee'] = {
+      \  'command': 'coffee',
+      \  'cmdopt': '-pb'
+      \ }
+let g:quickrun_config['babel'] = {
+      \  'cmdopt': '--stage 1',
+      \  'exec': 'babal %o %s | node'
+      \ }
+let g:quickrun_config['java'] = {
+      \  'exec' : ['javac -J-Dfile.encoding=UTF8 %o %s', '%c -Dfile.encoding=UTF8 %s:t:r %a']
+      \ }
 " <C-c> で実行を強制終了させる
 " quickrun.vim が実行していない場合には <C-c> を呼び出す
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
@@ -103,30 +78,57 @@ let g:solarized_visibility='normal'
 autocmd VimEnter,Colorscheme * hi SpecialKey gui=none guibg=#002b36
 " }}}
 " Airline {{{
-"let g:airline_section_a = airline#section#create(['mode','','branch'])
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:unite_force_overwrite_statusline = 0
-
-let g:vimfiler_force_overwrite_statusline = 0
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-
-set guifont=Ricty\ Regular\ for\ Powerline:h14
-let g:Powerline_symbols = 'fancy'
-set t_Co=256
-let g:airline_theme='dark'
-let g:airline_left_sep = '⮀'
-let g:airline_right_sep = '⮂'
-let g:airline_symbols.linenr = '⭡'
-let g:airline_symbols.branch = '⭠'
 let g:airline#extensions#tabline#left_sep = '⮀'
-let g:airline#extensions#tabline#left_alt_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮁'
+let g:airline#extensions#tabline#right_sep = '⮂'
+let g:airline#extensions#tabline#right_alt_sep = '⮃'
+" let g:unite_force_overwrite_statusline = 0
+" let g:vimfiler_force_overwrite_statusline = 0
+" let g:airline_powerline_fonts = 1
+" let g:Powerline_symbols = 'fancy'
+" set guifont=Ricty\ Regular\ for\ Powerline:h14
+" set t_Co=256
+let g:airline_theme = 'onedark'
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+else
+" let g:airline_symbols.space = \"\ua0"
+  let g:airline_symbols.branch = '⭠'
+  let g:airline_symbols.readonly = '⭤'
+  let g:airline_symbols.linenr = '⭡'
+endif
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
+let g:airline#extensions#tabline#buffer_idx_format = {
+      \ '0': '0 ',
+      \ '1': '1 ',
+      \ '2': '2 ',
+      \ '3': '3 ',
+      \ '4': '4 ',
+      \ '5': '5 ',
+      \ '6': '6 ',
+      \ '7': '7 ',
+      \ '8': '8 ',
+      \ '9': '9 '
+      \}
 " /=Airline }}}1
 " qfixhowm {{{
 " ファイル拡張子をmdにする
@@ -306,3 +308,33 @@ command! CopyFullPath call CopyFullPath()
 command! CopyFileName call CopyFileName()
 
 " }}}
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+" syntastic
+let g:syntastic_javascript_eslint_exec='~/.nodebrew/current/bin/eslint'
+let g:syntastic_javascript_jshint_exec='~/.nodebrew/current/bin/jshint'
+let g:syntastic_javascript_checkers=['eslint']
+
+" ここから下は Syntastic のおすすめの設定
+" ref. https://github.com/scrooloose/syntastic#settings
+
+" エラー行に sign を表示
+let g:syntastic_enable_signs = 1
+" location list を常に更新
+let g:syntastic_always_populate_loc_list = 0
+" location list を常に表示
+let g:syntastic_auto_loc_list = 2
+" ファイルを開いた時にチェックを実行する
+let g:syntastic_check_on_open = 0
+" :wq で終了する時もチェックする
+let g:syntastic_check_on_wq = 0
+"  }}}
