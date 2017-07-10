@@ -40,7 +40,7 @@ else
 endif
 
 set splitright
-set guifont=a18,r18,k18
+" set guifont=a18,r18,k18
 set guifont=Ricty\ Regular\ for\ Powerline:h18
 " Guifont! Consolas:h9
 set display=lastline
@@ -53,6 +53,7 @@ set shellslash
 " set iminsert=2 Invalid argument
 set visualbell t_vb= "ビープ音すべてを無効にする
 set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
+set isk+=-
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -76,4 +77,5 @@ au BufNewFile,BufRead *.snippets set noexpandtab ts=4 sw=4
 au BufNewFile,BufReadPost *.ejs set filetype=html
 au BufNewFile,BufReadPost *.md set filetype=markdown
 au BufNewFile,BufReadPost *.json5 set filetype=javascript
+au BufNewFile,BufReadPost *.go set ts=2 sts=2 sw=2
 set path+=~/.cabal/bin/pandoc

@@ -57,3 +57,4 @@ path=(
     /usr/local/bin(N-/)
     /usr/local/sbin(N-/)
 )
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn

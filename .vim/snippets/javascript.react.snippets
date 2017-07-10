@@ -1,27 +1,13 @@
-snippet rcc
-	var ${1} = React.createClass({
-		render: function () {
-			return (
-				${2:<div />}
-			);
-		}
-	});
-
-snippet rcla
-	class ${1} extends React.Component {
-		constructor(props) {
-			super(props);
-		}
-
-		render() {
-			return(
-				${2: <div />}
-			);
-		}
+snippet $
+	\${${0}}
+snippet styled
+	const ${2} = styled.${1:div}\`
+		+${0}
+	\`;
+snippet ap
+	(props) => props.${0}
+snippet pt
+options word
+	propTypes = {
+		${1}: propTypes.${0}
 	}
-
-snippet rdom
-	ReactDOM.render(
-		${1:< Component />},
-		${2:document.body }
-	);
