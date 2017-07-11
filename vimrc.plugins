@@ -67,7 +67,7 @@ call unite#custom#source('file', 'matchers', "matcher_default")"
 "au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 " }}}
 " solarized {{{
-let g:solarized_termcolors=16
+let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_degrade=0
 let g:solarized_bold=1
@@ -209,7 +209,7 @@ let g:neocomplete#text_mode_filetypes = {
 " Recommended key-mappings.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-    return neocomplete#smart_close_popup() . "\<CR>"
+    return neocomplete#close_popup() . "\<CR>"
 endfunction
 " Plugin key-mappings.
 inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<Up>"

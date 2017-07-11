@@ -38,7 +38,7 @@ NeoBundle 'altercation/vim-colors-solarized' " solarized
 NeoBundle 'vim-scripts/taglist.vim'          " taglist
 NeoBundle 'majutsushi/tagbar'                " tagbar
 NeoBundle 'vim-scripts/tagbar-phpctags'      " tagbar-phptags
-NeoBundle 'kannokanno/previm'                " previm
+NeoBundle 'tukiyo/previm'                    " previm
 NeoBundle 'tyru/open-browser.vim'            " open browser
 NeoBundle 'terryma/vim-expand-region'        " vim-expand-region
 NeoBundle 'vim-jp/vimdoc-ja'                 " vimdoc
@@ -88,7 +88,6 @@ NeoBundle 'pmsorhaindo/syntastic-local-eslint.vim'
 " NeoBundle 'h1mesuke/unite-outline'           " unite outline
 " NeoBundle 'itchyny/lightline.vim'            " lightline
 NeoBundle 'sbl/scvim'                        " scvim
-NeoBundle 'mhinz/vim-startify'               " startify
 NeoBundle 'AndrewRadev/splitjoin.vim'        " splitjoin
 NeoBundle 'bronson/vim-trailing-whitespace'  " vim-trailing-whitespace
 NeoBundle 'rking/ag.vim'                     " ag
@@ -104,6 +103,7 @@ syntax on
 
 " プラグインがインストールされているかチェック
 NeoBundleCheck
+autocmd VimEnter * imap <Nul> <C-Space>
 
 if neobundle#exists_not_installed_bundles()
   echomsg 'Not installed bundles : ' .
