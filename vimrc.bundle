@@ -93,6 +93,7 @@ NeoBundle 'bronson/vim-trailing-whitespace'  " vim-trailing-whitespace
 NeoBundle 'rking/ag.vim'                     " ag
 NeoBundle 'joshdick/onedark.vim'
 NeoBundle 'editorconfig/editorconfig-vim'    " editorconfig
+NeoBundle 'pentie/VimRepress'                 " VimRepress
 
 " :help neobundle-example
 
