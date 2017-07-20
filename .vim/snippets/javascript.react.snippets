@@ -1,3 +1,5 @@
+snippet Link
+	import { Link } from 'react-router';
 snippet $
 	\${${0}}
 snippet styled
@@ -17,4 +19,62 @@ snippet rclax
 			${0}
 		}
 	}
+snippet rcomp
+	import React, { Component } from 'react';
+
+	class ${1:Component name} extends Component {
+		render() {
+			return (
+				tag${0}
+			)
+		}
+	}
+
+	export default $1
+snippet renderRoot
+	render(
+		tag/${0},
+		document.getElementById('root')
+	)
+snippet RouterSet
+	import { Router, Route, IndexRoute , browserHistory } from 'react-router';
+
+	const router = (
+		<Router history={browserHistory}>
+			<Route path="/" component={${1}}>
+				<IndexRoute component={PhotoGrid}></IndexRoute>
+				t+${0}
+			</Route>
+		</Router>
+	)
+snippet t>
+	<${1:Custom HTML tag name}>${0}</$1>
+snippet t/
+	<${1:Custom HTML tag name} />
+snippet t+
+	<${1:Custom HTML tag name} attr+${2}>
+		${0:{children}}
+	</$1>
+snippet tr+
+	<Route path="${1}" component={${2}}></Route>
+snippet attr+
+	${1}=${2} attr+${0}
+snippet RCE
+	{React.cloneElement(${1})}
+snippet store+
+	import { createStore, compose } from 'redux'
+	import { syncHistoryWithStore } from 'react-router-redux'
+	import { browserHistory } from 'react-router'
+
+	// import the root reducer
+	import rootReducer from './reducers/index';
+
+	// import datas
+
+  // create an object for the default data
+	const defaultState = {}
+
+	export const store history = syncHistoryWithStore(browserHistory, store);
+
+	export default store
 
