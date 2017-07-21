@@ -158,6 +158,7 @@ nnoremap BL :BlogList
 nnoremap BN :BlogNew
 nnoremap BP :BlogPreview draft
 nnoremap BS :BlogSave publish
+nnoremap BC :BlogCode
 
 " expand path
 cmap <c-x> <c-r>=expand('%:p:h')<cr>/

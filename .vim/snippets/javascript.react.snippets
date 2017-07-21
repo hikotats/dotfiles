@@ -8,10 +8,21 @@ snippet styled
 	\`;
 snippet ap
 	(props) => props.${0}
-snippet pt
+snippet propTypes
 options word
-	propTypes = {
-		${1}: propTypes.${0}
+	${1}.propTypes = {
+		pT+${0}
+	}
+snippet pT+
+	${1}: PropTypes.${2}.isRequired,
+  pT+${0}
+snippet rclax
+	class ${1} extends Component {
+		render () {
+			return (
+				${0}
+			)
+		}
 	}
 snippet rclax
 	class ${1} extends Component {
