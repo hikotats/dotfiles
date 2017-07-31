@@ -14,7 +14,6 @@ options word
 	}
 # Anonymous Function
 snippet f
-options word
 	function (${1}) {
 		${0}
 	}
@@ -76,6 +75,10 @@ snippet case
 		${2}
 		break;
 	${0}
+snippet case+
+	case '${1:case}':
+		${2}
+	case+${0}
 # try
 snippet try
 	try {
@@ -97,7 +100,7 @@ snippet terr
 	throw new Error('${1:error message}')
 # return
 snippet ret
-	return ${0:result};
+	return ${0:result}
 
 # Loops
 

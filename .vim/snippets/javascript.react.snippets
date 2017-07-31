@@ -1,22 +1,43 @@
-snippet Link
-	import { Link } from 'react-router';
 snippet $
 	\${${0}}
+snippet a:prop
+	(props) => props.${0}
+snippet t:.
+	<${1:Custom HTML tag name}>${0}</$1>
+snippet t:/
+	<${0:Custom HTML tag name} />
+snippet t:>
+	<${1:Custom HTML tag name}
+		attr+${2}
+	>
+		${0:{children}}
+	</$1>
+snippet t:+
+	<${1:Custom HTML tag name} />
+	t:+${0}
+snippet attr+
+	${1}=${2}
+	attr+${0}
 snippet styled
 	const ${2} = styled.${1:div}\`
 		+${0}
 	\`;
-snippet ap
-	(props) => props.${0}
-snippet propTypes
+snippet r:propTypes
 options word
-	${1}.propTypes = {
+	propTypes = {
 		pT+${0}
 	}
 snippet pT+
 	${1}: PropTypes.${2}.isRequired,
   pT+${0}
-snippet rclax
+snippet map
+	${1}.map(${2} => {
+		return (
+			t:>${0}
+		)
+	})
+# component
+snippet r:clax
 	class ${1} extends Component {
 		render () {
 			return (
@@ -24,55 +45,79 @@ snippet rclax
 			)
 		}
 	}
-snippet rclax
-	class ${1} extends Component {
-		render () {
-			${0}
-		}
-	}
-snippet rcomp
+snippet r:comp
 	import React, { Component } from 'react';
 
 	class ${1:Component name} extends Component {
 		render() {
 			return (
-				tag${0}
+				t:>${0}
 			)
 		}
 	}
 
 	export default $1
-snippet renderRoot
+snippet r:compp
+	import React from 'react'
+	import PropTypes from 'prop-types'
+
+	const ${1} = (${2}) => (
+		t:>${3}
+	)
+
+	$1.propTypes${0}
+
+	export default $1
+snippet r:app
+	import React from 'react'
+	// components
+	im+${1}
+
+	const App = () => (
+		<div>
+			t:+${0}
+		</div>
+	)
+snippet r:renderRoot
 	render(
-		tag/${0},
+		t:/${0},
 		document.getElementById('root')
 	)
-snippet RouterSet
-	import { Router, Route, IndexRoute , browserHistory } from 'react-router';
-
-	const router = (
-		<Router history={browserHistory}>
-			<Route path="/" component={${1}}>
-				<IndexRoute component={PhotoGrid}></IndexRoute>
-				t+${0}
-			</Route>
-		</Router>
+snippet r:entryPoint
+	import React from 'react'
+	import ReactDOM from 'react-dom'
+	import { Provider } from 'react-redux'
+	import { createStore, applyMiddleware } from 'redux'
+	import reducers from './reducers'
+	import App from './components/App'
+	${0}
+	let store = createStore(reducers)
+	// const createStoreWithMiddleware = applyMiddleware()(createStore)
+	ReactDOM.render(
+	  <Provider store={store}>
+	    <App />
+	  </Provider>
+	  , document.querySelector('${1:.container}')
 	)
-snippet t>
-	<${1:Custom HTML tag name}>${0}</$1>
-snippet t/
-	<${1:Custom HTML tag name} />
-snippet t+
-	<${1:Custom HTML tag name} attr+${2}>
-		${0:{children}}
-	</$1>
-snippet tr+
-	<Route path="${1}" component={${2}}></Route>
-snippet attr+
-	${1}=${2} attr+${0}
-snippet RCE
-	{React.cloneElement(${1})}
-snippet store+
+snippet r:rootReducer
+	import { combineReducers } from 'redux'
+	// reducers
+	im+${2}
+
+	const ${1} = combineReducers({
+		${0}
+	})
+
+	export default $1
+snippet r:reducer
+	const ${1:hoge} = (state = ${2:[]}, action) => {
+		switch(action.type) {
+			case+${0}
+			default:
+				return state
+		}
+	}
+snippet r:store
 	import { createStore, compose } from 'redux'
 	import { syncHistoryWithStore } from 'react-router-redux'
 	import { browserHistory } from 'react-router'
@@ -88,4 +133,58 @@ snippet store+
 	export const store history = syncHistoryWithStore(browserHistory, store);
 
 	export default store
+snippet r:container
+	import { connect } from 'react-redux'
 
+	${1}
+
+	mapStateToProps
+	mapDispatchToProps
+	connect
+
+	export default ${0}
+snippet r:mapStateToProps
+	const mapStateToProps = ${1} => {
+		return {
+			${0}
+		}
+	}
+snippet r:mapDispatchToProps
+	const mapDispatchToProps = ${1} => {
+		return {
+			${0}
+		}
+	}
+snippet r:dispatch
+	dispatch(${1}(${2}))
+snippet r:connect
+options word
+	const ${1} = connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(${0})
+snippet r.cloneElement
+	{React.cloneElement(${1})}
+
+# React Router
+snippet r:router
+	import {
+		Router,
+		Route,
+		IndexRoute,
+		browserHistory
+	} from 'react-router';
+
+	const router = (
+		<Router history={browserHistory}>
+			<Route path="/" component={${1}}>
+				<IndexRoute component={${2}}></IndexRoute>
+				t:>${0}
+			</Route>
+		</Router>
+	)
+snippet r:route+
+	<Route path="${1}" component={${2}}></Route>
+	rRoute+${0}
+snippet r:link
+	import { Link } from 'react-router';
