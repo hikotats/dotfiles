@@ -1,5 +1,12 @@
-#!/bin/sh
-$ ln -sf ~/dotfiles/vimrc ~/.vimrc
-$ ln -sf ~/dotfiles/zshrc ~/.zshrc
-$ ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
-#$ ln -sf ~/dotfiles/.wgetrc ~/.wgetrc
+#!/bin/bash
+
+for f in .??*
+do
+    [[ "$f" == ".git" ]] && continue
+    [[ "$f" == ".DS_Store" ]] && continue
+
+    ln -snfv ~/dotfiles/"$f" ~/
+done
+
+ln -sf ~/dotfiles/ctags ~/ctags
+ln -sf ~/dotfiles/tmux-powerline/themes/default.sh ~/tmux-powerline/themes/default.sh
