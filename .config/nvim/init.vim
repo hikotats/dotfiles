@@ -112,9 +112,8 @@ set ts=2 sw=2 sts=0 " tabstop shiftwidth softtabstop
 set expandtab
 set smartindent
 set colorcolumn=80
-set ruler
 
-" }}}
+set clipboard+=unnamed
 
 " cursor shape
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -134,11 +133,12 @@ augroup vimrc
     autocmd!
 augroup END
 
-autocmd vimrc BufWritePre * :call StripTrailingWhitespaces()                    "Auto-remove trailing spaces
+" autocmd vimrc BufWritePre * :call StripTrailingWhitespaces()                    "Auto-remove trailing spaces
 autocmd vimrc InsertEnter * :set nocul                                          "Remove cursorline highlight
 autocmd vimrc InsertLeave * :set cul | NeoSnippetClearMarkers                   "Add cursorline highlight in normal mode and remove snippet markers
 autocmd vimrc FileType php setlocal sw=4 sts=4 ts=4                             "Set indentation to 4 for php
 autocmd vimrc FocusGained,BufEnter * checktime                                  "Refresh file when vim gets focus
+autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 " }}}
 " ================ Colorscheme setup ================ {{{
@@ -183,6 +183,7 @@ map q <Nop>
 
 " Map save
 nnoremap <Leader>w :w<CR>
+nnoremap <M-s> :w<CR>
 " Map close
 nnoremap <Leader>q :q<CR>
 " Open vertical split
@@ -206,9 +207,9 @@ nnoremap Y y$
 " Copy to system clipboard
 vnoremap <C-c> "+y
 " Paste from system clipboard with Ctrl +v
-" inoremap <C-v> <Esc>"+p
-" vnoremap <C-v> "0p
-" nnoremap <C-v> "0p
+inoremap <M-v> <Esc>"+p
+vnoremap <M-v> "0p
+nnoremap <M-v> "0p
 
 " Clear search highlight
 nnoremap <ESC><ESC> :noh<CR>
@@ -318,6 +319,16 @@ cmap <c-x> <c-r>=expand('%:p:h')<cr>/
 cmap <c-z> <c-r>=expand('%:p:r')<cr>
 
 " }}}
+
+function! Restoreregister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:repl()
+  let s:restore_reg = @"
+  return "p@=Restoreregister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>repl()
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
