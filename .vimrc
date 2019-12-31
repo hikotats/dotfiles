@@ -16,33 +16,19 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 NeoBundle 'Shougo/neomru.vim'                " neomru
 NeoBundle 'Shougo/neocomplete.vim'           " neocomplete
-NeoBundle 'violetyk/neocomplete-php.vim'     " neocomplete-php
 NeoBundle 'Shougo/neosnippet.vim'            " neosnippet
 NeoBundle 'honza/vim-snippets'               " vim-snippets
 NeoBundle 'scrooloose/nerdtree'              " nerdtree
 NeoBundle 'Shougo/vimfiler'                  " vimfiler
 NeoBundle 'Shougo/vimshell'                  " vimshell
 NeoBundle 'thinca/vim-quickrun'              " vim-quickrun
-NeoBundle 'osyo-manga/shabadou.vim'          " shabadou.vim
-NeoBundle 'osyo-manga/vim-watchdogs'         " vim-watchdogs
-NeoBundle 'KazuakiM/vim-qfstatusline'        " vim-qfstatusline
-NeoBundle 'mattn/gist-vim'                   " gist-vim
 NeoBundle 'altercation/vim-colors-solarized' " solarized
-NeoBundle 'vim-scripts/taglist.vim'          " taglist
-NeoBundle 'majutsushi/tagbar'                " tagbar
-NeoBundle 'vim-scripts/tagbar-phpctags'      " tagbar-phptags
 NeoBundle 'kannokanno/previm'                    " previm
 NeoBundle 'tyru/open-browser.vim'            " open browser
 NeoBundle 'terryma/vim-expand-region'        " vim-expand-region
-NeoBundle 'vim-jp/vimdoc-ja'                 " vimdoc
 NeoBundle 'h1mesuke/vim-alignta'             " alinta
-NeoBundle 'glidenote/memolist.vim'           " memolist
 NeoBundle 'ctrlpvim/ctrlp.vim'               " ctrlp
 NeoBundle 'mattn/webapi-vim'                 " webapi
-NeoBundle 'moznion/hateblo.vim'              " hateblo
-NeoBundle 'fuenor/qfixgrep'
-NeoBundle 'fuenor/qfixhowm'
-NeoBundle 'ujihisa/neco-look'                " neco-look
 NeoBundle 'mattn/emmet-vim'                  " emmet
 NeoBundle 'tpope/vim-surround'               " surround
 NeoBundle 'tpope/vim-fugitive'               " fugitive
@@ -51,37 +37,14 @@ NeoBundle 'airblade/vim-gitgutter'           " vim-gitgutter
 NeoBundle 'junegunn/gv.vim'                  " gv
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'      " nerdtree-git-plugin
 NeoBundle 'tpope/vim-markdown'               " markdown
-NeoBundle 'hail2u/vim-css3-syntax'           " css3 syntax
-NeoBundle 'jelera/vim-javascript-syntax'     " javascript syntax
-NeoBundle 'othree/yajs.vim'                  " yajs.vim
 NeoBundle 'elzr/vim-json'                    " json syntax
-NeoBundle 'kchmck/vim-coffee-script'         " coffee syntax
-NeoBundle 'groenewege/vim-less'              " less syntax
-NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'leafgarland/typescript-vim.git'   " typescript
-NeoBundle 'marijnh/tern_for_vim', {
-\ 'build': {
-\   'others': 'npm install'
-\}}
-NeoBundle 'motemen/xslate-vim'               " xslate
-NeoBundle 'myhere/vim-nodejs-complete'       " nodejs complete
 NeoBundle 'tomtom/tcomment_vim'              " tcomment
 NeoBundle 'vim-scripts/matchit.zip'          " matchit
-NeoBundle 'thinca/vim-ref'                   " ref
-NeoBundle 'mattn/excitetranslate-vim'        " 翻訳
-NeoBundle 'scrooloose/syntastic'             " syntastic
-NeoBundle 'pmsorhaindo/syntastic-local-eslint.vim'
-NeoBundle 'sbl/scvim'                        " scvim
 NeoBundle 'AndrewRadev/splitjoin.vim'        " splitjoin
 NeoBundle 'bronson/vim-trailing-whitespace'  " vim-trailing-whitespace
 NeoBundle 'rking/ag.vim'                     " ag
 NeoBundle 'joshdick/onedark.vim'
 NeoBundle 'editorconfig/editorconfig-vim'    " editorconfig
-NeoBundle 'pentie/VimRepress'                " VimRepress
-NeoBundle 'batsuev/csscomb-vim'              " csscomb
-NeoBundle 'kewah/vim-stylefmt'               " stylefmt
-NeoBundle 'vim-scripts/vim-niji'             " vim-niji
-NeoBundle 'tomlion/vim-solidity'             " vim-solidity
 
 call neobundle#end()
 
@@ -124,7 +87,9 @@ set mouse=a "Enable mouse usage
 set showmatch "Highlight matching bracket
 set nostartofline "Jump to first non-blank character
 set timeoutlen=1000 ttimeoutlen=0 "Reduce Command timeout for faster escape and O
-set fencs=utf-8,iso-2022-jp,euc-jp,cp932 "Set utf-8 encoding on write
+set encoding=utf-8
+set fileencodings=iso-2022-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 set wrap "Enable word wrap
 set linebreak "Wrap lines at convenient points
 set listchars=tab:^\ ,trail:·,eol:↲,extends:❯,precedes:❮ "Set trails for tabs and spaces
@@ -192,7 +157,7 @@ else
 endif
 
 " set guifont=a18,r18,k18
-set guifont=Ricty\ Regular\ for\ Powerline:h18
+"set guifont=Ricty\ Regular\ for\ Powerline:h18
 " Guifont! Consolas:h9
 set display=lastline
 "https://github.com/leader22/dotfiles/blob/master/.vimrc
@@ -218,8 +183,6 @@ let &t_EI = "\e]50;CursorShape=0\x7"
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 "
-set path+=~/.cabal/bin/pandoc
-
 " .vimrcを瞬時に開く
 " nnoremap <Space><Space>. :e $MYVIMRC<CR>
 nnoremap <Leader>. :<C-u>tabedit $MYVIMRC<CR>
@@ -324,7 +287,6 @@ nnoremap [Q :<C-u>cfirst<CR>
 nnoremap ]Q :<C-u>clast<CR>
 
 inoremap <C-c> <Esc>
-vnoremap <C-p> "0p<CR>"
 " NERDTreeToggle
 nnoremap <silent><Leader>e :NERDTreeToggle<CR>
 " \lでtaglistウインドウを開いたり閉じたり出来るショートカット"
@@ -339,23 +301,9 @@ nnoremap <Leader>df :vertical diffsplit
 
 " memolist keymap
 " メモ関連マッピング
-nnoremap MN :MemoNew
-nnoremap ML :MemoList
-nnoremap MF :MemoFiler
-nnoremap MG :MemoGrep
-nnoremap VF :VimFiler
-nnoremap PO :PrevimOpen
-nnoremap HC :HatebloCreate
-nnoremap HD :HatebloCreateDraft
-nnoremap HB :execute "OpenBrowser ".hatebloUrl
 nnoremap CP :CopyPath
 nnoremap CFP :CopyFullPath
 nnoremap CF :CopyFileName
-nnoremap BL :BlogList
-nnoremap BN :BlogNew
-nnoremap BP :BlogPreview draft
-nnoremap BS :BlogSave publish
-nnoremap BC :BlogCode
 
 " expand path
 cmap <c-x> <c-r>=expand('%:p:h')<cr>/
@@ -377,41 +325,6 @@ vmap <silent> <expr> p <sid>Repl()
 " vim-qfstatusline {{{
 set laststatus=2
 set cmdheight=1
-" }}}
-" vim-quickrun {{{
-" runner/vimproc/updatetime で出力バッファの更新間隔をミリ秒で設定できます
-" updatetime が一時的に書き換えられてしまうので注意して下さい
-let g:quickrun_config = {}
-let g:quickrun_config._ = {
-      \   'runner' : 'vimproc',
-      \   'runner/vimproc/updatetime' : 60
-      \ }
-let g:quickrun_config['markdown'] = {
-      \  'outputter' : 'browser',
-      \  'command': 'pandoc',
-      \  'cmdopt': '-s --template=github --css=github.css --from=markdown --to=html',
-      \  'exec': '%c %o %s %a'
-      \ }
-let g:quickrun_config['coffee'] = {
-      \  'command': 'coffee',
-      \  'cmdopt': '-pb'
-      \ }
-let g:quickrun_config['babel'] = {
-      \  'cmdopt': '--stage 1',
-      \  'exec': 'babal %o %s | node'
-      \ }
-let g:quickrun_config['java'] = {
-      \  'exec' : ['javac -J-Dfile.encoding=UTF8 %o %s', '%c -Dfile.encoding=UTF8 %s:t:r %a']
-      \ }
-let g:quickrun_config['css'] = {
-      \ 'exec': ['call Stylefmt() %o %c | node']
-      \ }
-let g:quickrun_config['scheme'] = {
-      \ 'command': '/usr/local/bin/gosh'
-      \ }
-" <C-c> で実行を強制終了させる
-" quickrun.vim が実行していない場合には <C-c> を呼び出す
-nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 " }}}
 " solarized {{{
 let g:solarized_termcolors=256
@@ -477,29 +390,6 @@ let g:airline#extensions#tabline#buffer_idx_format = {
       \ '9': '9 '
       \}
 " /=Airline }}}1
-" qfixhowm {{{
-" ファイル拡張子をmdにする
-let howm_filename = '%Y/%m/%Y-%m-%d-%H%M%S.md'
-" howm_dir
-let howm_dir = '~/Dropbox/howm'
-" ファイルタイプをmarkdownにする
-let QFixHowm_FileType = 'markdown'
-" タイトル記号
-let QFixHowm_Title = '#'
-" タイトル行検索正規表現の辞書を初期化
-let QFixMRU_Title = {}
-" MRUでタイトル行とみなす正規表現(Vimの正規表現で指定)
-let QFixMRU_Title['mkd'] = '^###[^#]'
-" grepでタイトル行とみなす正規表現(使用するgrepによっては変更する必要があります)
-let QFixMRU_Title['mkd_regxp'] = '^###[^#]'
-
-let QFixHowm_ListReminder_ScheExt = '[-@+!~.]'
-" QFixHowm + Markdown
-"
-" }}}
-" Previm {{{
-" let g:previm_open_cmd = 'open -a Chrome'
-" }}}
 " neocomplete {{{
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -525,18 +415,6 @@ let g:neocomplete#enable_quick_match = 1
 let g:neocomplete#enable_auto_select = 0
 "ポップアップメニューで表示される候補の数。初期値は100
 " let g:neocomplete#max_list = 20
-
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-  \ 'default'    : '',
-  \ 'vimshell'   : $HOME.'/.vimshell_hist',
-  \ 'scheme'     : $HOME.'/.gosh_completions',
-  \ 'php'        : '~/Dropbox/dict/php.dict,~/Dropbox/dict/wordpress.dict',
-  \ 'javascript' : '~/Dropbox/dict/javascript.dict,~/Dropbox/dict/jquery.dict,~/Dropbox/dict/lodash.dict,~/Dropbox/dict/react.dict,~/Dropbox/dict/redux.dict',
-  \ 'ejs'        : $HOME.'/Dropbox/kanpo.dict'
-  \ }
-
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -571,29 +449,6 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><Space> pumvisible() ? neocomplete#close_popup()."\<Space>" : "\<Space>"
 inoremap <expr><C-Space> pumvisible() ? neocomplete#close_popup() : ""
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-au BufRead,BufNewFile *.json set filetype=javascript
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-" neocomplete-php confing
-let g:neocomplete_php_locale = 'ja'
-" }}}
 " neosunippet-snippets {{{
 imap ,, <Plug>(neosnippet_expand_or_jump)
 smap ,, <Plug>(neosnippet_expand_or_jump)
@@ -615,19 +470,6 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#disable_runtime_snippets = {'_' : 1}
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
-" }}}
-" taglist {{{
-set tags=tags
-" ctagsのコマンド
-let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8_1/bin/ctags'
-"右側にtag listのウインドうを表示する
-let Tlist_Use_Right_Window = 1
-"taglistのウインドウだけならVimを閉じる
-let Tlist_Exit_OnlyWindow = 1
-let g:tlist_javascript_settings = 'javascript;c:class;m:method;f:function;p:property'
-" let s:tlist_def_javascript_settings = 'javascript;f:function;c:class;m:method;p:property'
-
-" }}}
 " vim-trailing-whitespace {{{
 highlight default ExtraWhitespace ctermbg=darkred guibg=#d33682
 " ファイル保存時に余分なスペースを削除する
@@ -666,82 +508,4 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
-" syntastic {{{
-let g:syntastic_javascript_standard_exec="~/.nodebrew/current/bin/standard"
-let g:syntastic_javascript_eslint_exec="~/.nodebrew/current/bin/eslint"
-let g:syntastic_javascript_checkers=["eslint"]
-" autocmd bufwritepost *.js silent !standard --fix -w %
-" set autoread
-
-let g:syntastic_mode_map = {
-      \   'mode': 'active',
-      \   'active_filetypes': ['javascript'],
-      \   'passive_filetypes': []
-      \ }
-
-" ここから下は Syntastic のおすすめの設定
-" ref. https://github.com/scrooloose/syntastic#settings
-
-" エラー行に sign を表示
-let g:syntastic_enable_signs = 1
-" location list を常に更新
-let g:syntastic_always_populate_loc_list = 0
-" location list を常に表示
-let g:syntastic_auto_loc_list = 2
-" ファイルを開いた時にチェックを実行する
-let g:syntastic_check_on_open = 0
-" :wq で終了する時もチェックする
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height=6
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-"  }}}
-"  {{{ csscomb
-" Map bc to run CSScomb. bc stands for beautify css
-autocmd FileType css noremap <buffer> <leader>bc :CSScomb<CR>
-" Automatically comb your CSS on save
-autocmd BufWritePre,FileWritePre *.css,*.less,*.scss,*.sass silent! :CSScomb
-"  }}}
-
-" memolist.vim
-" Maintainer:  Akira Maeda <glidenote@gmail.com>
-" Version:  0.1.0
-" See doc/memolist.txt for instructions and usage.
-
-" Code {{{1
-" Exit quickly when:
-" - this plugin was already loaded (or disabled)
-" - when 'compatible' is set
-
-if (exists("g:loaded_memolist") && g:loaded_memolist) || &cp
-  finish
-endif
-let g:loaded_memolist = 1
-
-let s:cpo_save = &cpo
-set cpo&vim
-
-if !exists('g:memolist_path')
-  let g:memolist_path = $HOME . "/Dropbox/memo"
-endif
-
-command! -nargs=0 MemoList :call memolist#list()
-" command! -nargs=? MemoGrep :call memolist#grep(<q-args>)
-command! -nargs=? MemoNew :call memolist#new(<q-args>)
-
-let &cpo = s:cpo_save
-" メモを作成するコマンド
-" command! -nargs=0 MemoNew call s:open_memo_file()
-
-" メモ一覧をUniteで呼び出すコマンド
-command! -nargs=0 MemoList :Unite file_rec:~/Dropbox/Memo/ -buffer-name=memo_list
-
-" メモ一覧をUnite grepするコマンド
-command! -nargs=0 MemoGrep :Unite grep:~/Dropbox/Memo/ -no-quit
-
-" メモ一覧をVimFilerで呼び出すコマンド
-command! -nargs=0 MemoFiler :VimFiler ~/Dropbox/Memo
-
-" vim:set ft=vim ts=2 sw=2 sts=2:
 
