@@ -1,0 +1,64 @@
+{
+	"const": {
+		"prefix": "const",
+		"body": [
+			"const ${1} = ${0}"
+		],
+		"description": "const"
+	},
+	"let": {
+		"prefix": "let",
+		"body": [
+			"let ${1} = ${0}"
+		],
+		"description": "let"
+	},
+	"import": {
+		"prefix": "im",
+		"body": [
+			"import ${1} from '${0}'"
+		],
+		"description": "import"
+	},
+	"class": {
+		"prefix": "cla",
+		"body": [
+			"class ${1} {",
+			"  ${0}",
+			"}"
+		],
+		"description": "class"
+	},
+	"class with extends": {
+		"prefix": "clax",
+		"body":[
+			"class ${1} extends ${2} {",
+			"  ${0}",
+			"}"
+		],
+		"description": "class with extends"
+	},
+	"arrow function": {
+		"prefix": "a",
+		"body":[
+			"(${1}) => {${0}}"
+		],
+		"description": "arrow function"
+	},
+	"arrow function 2": {
+		"prefix": "af",
+		"body":[
+			"() => {",
+			"  ${0}",
+			"}"
+		],
+		"description": "arrow function"
+	},
+	"export default": {
+		"prefix": "ed",
+		"body":[
+			"export default ${0}"
+		],
+		"description": "export default"
+	}
+}

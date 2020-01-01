@@ -23,3 +23,23 @@ if [ ! -d $HOME/.vim/bundle ]; then
   mkdir -p $HOME/.vim/bundle
   git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 fi
+
+# create vscode symlink
+VSCODE_SETTINGS_PATH=$HOME"/Library/Application Support/Code/User"
+
+if [ -d "$VSCODE_SETTINGS_PATH" ]; then
+  for f in "$HOME/dotfiles/vscode/"*".json" ; do
+    if [ -f "$VSCODE_SETTINGS_PATH/$f" ]; then
+      rm "$VSCODE_SETTINGS_PATH/$f"
+      ln -snfv "$HOME/dotfiles/vscode/$f" "$VSCODE_SETTINGS_PATH/$f"
+    fi
+  done
+
+  VSCODE_SNIPPETS_PATH="$VSCODE_SETTINGS_PATH/snippets"
+
+  [ ! -d "$VSCODE_SNIPPETS_PATH" ] && mkdir -p "$VSCODE_SNIPPETS_PATH"
+  for s in `ls "$VSCODE_SNIPPETS_PATH"`; do
+    rm "$VSCODE_SNIPPETS_PATH/$s"
+    ln -snfv "$HOME/dotfiles/vscode/snippets/$s" "$VSCODE_SNIPPETS_PATH/$s"
+  done
+fi

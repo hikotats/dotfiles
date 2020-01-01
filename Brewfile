@@ -28,6 +28,7 @@ cask "google-japanese-ime"
 cask "iterm2"
 cask "sequel-pro-nightly"
 cask "sourcetree"
+cask "visual-studio-code"
 mas "Alfred", id: 405843582
 mas "Logic Pro X", id: 634148309
 mas "Slack", id: 803453959

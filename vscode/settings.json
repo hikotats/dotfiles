@@ -1,0 +1,13 @@
+{
+    "window.zoomLevel": 0,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.tabSize": 2,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.formatOnSave": true,
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "solargraph.diagnostics": true,
+    "ruby.useLanguageServer": true,
+    "ruby.intellisense": "rubyLocate"
+}
